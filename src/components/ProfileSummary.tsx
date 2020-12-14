@@ -12,7 +12,7 @@ import jason from '../img/jason.jpg';
 import MyTimeline from './MyTimeline';
 import Biography from './Biography';
 
-const { Title, Paragraph } = Typography;
+const { Title, Paragraph, Text } = Typography;
 
 const Content = ({ children, extraContent }: any) => {
   return (
@@ -35,7 +35,7 @@ export const guidelyteExperience = (
       }
     >
       <Paragraph>
-        <Title level={5}>Guidelyte | <span style={{fontWeight: 'normal'}}>Founder, CEO, Chief Engineer</span>
+        <Title level={5}>Guidelyte | <Text>Founder, CEO, Chief Engineer</Text>
         </Title>
         <ul>
           <li>
@@ -65,7 +65,7 @@ export const elevatExperience = (
       }
     >
       <Paragraph>
-        <Title level={5}>Elevat | <span style={{fontWeight: 'normal'}}>Software Engineer</span>
+        <Title level={5}>Elevat | <Text>Software Engineer</Text>
         </Title>
         <ul>
           <li>
@@ -98,7 +98,7 @@ export const xemelgoExperience = (
       }
     >
       <Paragraph>
-        <Title level={5}>Xemelgo | <span style={{fontWeight: 'normal'}}>Software Engineer</span>
+        <Title level={5}>Xemelgo | <Text>Software Engineer</Text>
         </Title>
         <ul>
           <li>
@@ -116,6 +116,23 @@ export const xemelgoExperience = (
   </>
 );
 
+const URL_CONSTANTS: Record<string, string> = {
+  medium: 'https://medium.com/@wjason',
+  email: 'mailto:wang.jason.010@gmail.com',
+  github: 'https://github.com/jawang94',
+  linkedin: 'https://www.linkedin.com/in/jasonwang94/',
+  resume: 'https://jasonw.tech/rsc/CurrentResume.pdf'
+}
+
+const buttonClicked = (redirectTo: string) => {
+  const url = URL_CONSTANTS[redirectTo];
+  if (redirectTo !== 'email') {
+    window.open(url, '_blank');
+  } else {
+    window.location.href = url;
+  }
+}
+
 const ProfileSummary: FC = () => {
   return (
     <PageHeader
@@ -124,11 +141,11 @@ const ProfileSummary: FC = () => {
       subTitle="Software Engineer, Inventor, and Entrepreneur"
       tags={<Tag color="green">Seeking Opportunities</Tag>}
       extra={[
-        <Button key="5"><MediumSquareFilled />Medium</Button>,
-        <Button key="4"><MailFilled />Email</Button>,
-        <Button key="3"><GithubFilled />GitHub</Button>,
-        <Button key="2"><LinkedinFilled />Linkedin</Button>,
-        <Button key="1" type="primary"><FilePdfFilled/>Resume</Button>,
+        <Button key="5" onClick={() => buttonClicked('medium')}><MediumSquareFilled />Medium</Button>,
+        <Button key="4" onClick={() => buttonClicked('email')}><MailFilled />Email</Button>,
+        <Button key="3" onClick={() => buttonClicked('github')}><GithubFilled />GitHub</Button>,
+        <Button key="2" onClick={() => buttonClicked('linkedin')}><LinkedinFilled />Linkedin</Button>,
+        <Button key="1" type="primary" onClick={() => buttonClicked('resume')}><FilePdfFilled/>Resume</Button>,
       ]}
       avatar={{ shape: 'square', size: {xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}, src: jason}}
     >

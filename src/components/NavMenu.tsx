@@ -28,13 +28,13 @@ export default class NavMenu extends Component {
         <SubMenu
           key="SubMenu"
           icon={<TrophyFilled />}
-          title="My Projects"
+          title="Awards and Projects"
         >
-          <Menu.ItemGroup title="Award Winning">
-            <Menu.Item key="setting:1">TesselloScore - 1st @DefHacks2019</Menu.Item>
-            <Menu.Item key="setting:2">FanScoop - 1st @SacHacks2018</Menu.Item>
+          <Menu.ItemGroup title="Awards">
+            <Menu.Item key="setting:1">TesselloScore - 1st @DefHacks'19</Menu.Item>
+            <Menu.Item key="setting:2">FanScoop - 1st @SacHacks'18</Menu.Item>
           </Menu.ItemGroup>
-          <Menu.ItemGroup title="Fun Stuff">
+          <Menu.ItemGroup title="Projects">
             <Menu.Item key="setting:3">MunchWheel</Menu.Item>
             <Menu.Item key="setting:4">Blast</Menu.Item>
           </Menu.ItemGroup>
