@@ -138,7 +138,7 @@ const ProfileSummary: FC = () => {
     <PageHeader
       title="Jason Wang"
       className="site-page-header"
-      subTitle="Software Engineer, Inventor, and Entrepreneur"
+      subTitle="Software Engineer, Entrepreneur"
       tags={<Tag color="green">Seeking Opportunities</Tag>}
       extra={[
         <Button key="5" onClick={() => buttonClicked('medium')}><MediumSquareFilled />Medium</Button>,

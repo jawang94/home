@@ -1,28 +1,33 @@
 import { Menu } from 'antd';
-import React, { Component } from 'react';
+import React, { FC, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { QuestionCircleFilled, SmileFilled, TrophyFilled } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
 
-export default class NavMenu extends Component {
-  state = {
-    current: 'mail',
-  };
+const NavMenu: FC = () => {
+  const [state, updateState] = useState({current: 'mail'})
+  const history = useHistory();
 
-  handleClick = (e: any) => {
+  const ROUTER_MAP: any = {
+    mail: '/',
+    app: '/ama'
+  }
+
+  const handleClick = (e: any) => {
     console.log('click ', e);
-    this.setState({ current: e.key });
+    updateState({ ...state, current: e.key });
+    history.push(ROUTER_MAP[e.key])
   };
 
-  render() {
-    const { current } = this.state;
+    const { current } = state;
     return (
-      <Menu onClick={this.handleClick} selectedKeys={[current]} theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+      <Menu onClick={handleClick} selectedKeys={[current]} theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
         <Menu.Item key="mail" icon={<SmileFilled />}>
           About Me
         </Menu.Item>
-        <Menu.Item key="app" disabled icon={<QuestionCircleFilled />}>
+        <Menu.Item key="app" icon={<QuestionCircleFilled />}>
           AMA
         </Menu.Item>
         <SubMenu
@@ -41,6 +46,6 @@ export default class NavMenu extends Component {
         </SubMenu>
       </Menu>
     );
-  }
 }
 
+export default NavMenu;

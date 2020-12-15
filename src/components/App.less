@@ -47,13 +47,26 @@
   min-height: 280px;
   padding: 24px;
   text-align: start;
+
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+  }
 }
 .ant-page-header-heading {
   align-items: center;
 
-  @media only screen and (max-width: 600px) {
-    display: flex;
-    flex-direction: column;
+  @media only screen and (max-width: 1323px) {
+    display: block;
+  }
+}
+.ant-page-header-heading-left {
+  @media only screen and (max-width: 1323px) {
+    margin-bottom: 10px;
+  }
+}
+.ant-page-header-heading-extra {
+  @media only screen and (max-width: 1323px) {
+    white-space: normal;
   }
 }
 #components-layout-demo-top .logo {

@@ -3,9 +3,10 @@ import React from 'react';
 export default function Biography() {
   return (
     <>
-      I'm a dreamer, I'm infinitely curious, and I'm filled with passion.<br/>
-      Passion for this planet and my fellow man and woman.<br/>
-      I love applying my skills to create influential products for others.<br/>
+      I grew up always thinking I would either be an astronaut or a doctor.
+      Actually, I did go to university for Nursing but eventually left in pursuit of technology.
+      Formal education never worked well for me, but self-directed learning certainly did.
+      I've always been a dreamer and tinkerer.
     </>
   );
 }
