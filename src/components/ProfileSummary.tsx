@@ -11,6 +11,7 @@ import xemelgo from '../img/xemelgo.png';
 import jason from '../img/jason.jpg';
 import MyTimeline from './MyTimeline';
 import Biography from './Biography';
+import { Fade, Slide } from 'react-reveal';
 
 const { Title, Paragraph, Text } = Typography;
 
@@ -150,13 +151,17 @@ const ProfileSummary: FC = () => {
       avatar={{ shape: 'square', size: {xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}, src: jason}}
     >
       <Content>
-        <Title level={3}>Biography</Title>
-        <Biography />
+        <Slide right>
+          <Title level={3}>Biography</Title>
+          <Biography />
+        </Slide>
         <Divider />
 
         <Title level={3}>Timeline</Title>
         <Content>
-          <MyTimeline />
+          <Fade bottom>
+            <MyTimeline />
+          </Fade>
         </Content>
       </Content>
     </PageHeader>
