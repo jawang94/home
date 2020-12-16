@@ -5,22 +5,30 @@
   "dependencies": {
     "@ant-design/icons": "^4.3.0",
     "@craco/craco": "^6.0.0",
+    "@popmotion/popcorn": "0.4.2",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.53",
-    "@types/react-dom": "^16.9.8",
+    "@types/lodash": "^4.14.165",
     "antd": "^4.9.2",
     "craco-less": "^1.17.1",
+    "framer-motion": "1.6.0",
+    "lodash": "^4.17.20",
+    "popmotion": "9.0.0-beta-8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-lorem-ipsum": "^1.4.9",
     "react-reveal": "^1.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
-    "typescript": "^4.0.3",
+    "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-router-dom": "^5.1.6",
+    "typescript": "^4.1.3"
   },
   "scripts": {
     "start": "craco start",
@@ -45,8 +53,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/react-router-dom": "^5.1.6"
   }
 }

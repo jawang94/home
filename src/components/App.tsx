@@ -11,7 +11,9 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { Fade, Slide } from 'react-reveal'
+import { Fade } from 'react-reveal'
+import { CardList } from './CardList';
+
 const { Header, Content, Footer } = Layout;
 
 const App: FC = () => (
@@ -28,6 +30,11 @@ const App: FC = () => (
               <Switch>
                 <Route path="/ama">
                   <AMA />
+                </Route>
+                <Route path="/projects">
+                  <div className="container">
+                    <CardList />
+                  </div>
                 </Route>
                 <Route path="/">
                   <ProfileSummary />

@@ -1,10 +1,7 @@
 import { Menu } from 'antd';
 import React, { FC, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
 import { QuestionCircleFilled, SmileFilled, TrophyFilled } from '@ant-design/icons';
-
-const { SubMenu } = Menu;
 
 const NavMenu: FC = () => {
   const [state, updateState] = useState({current: 'mail'})
@@ -12,7 +9,8 @@ const NavMenu: FC = () => {
 
   const ROUTER_MAP: any = {
     mail: '/',
-    app: '/ama'
+    app: '/ama',
+    projects: 'projects'
   }
 
   const handleClick = (e: any) => {
@@ -30,8 +28,11 @@ const NavMenu: FC = () => {
         <Menu.Item key="app" icon={<QuestionCircleFilled />}>
           AMA
         </Menu.Item>
-        <SubMenu
-          key="SubMenu"
+        <Menu.Item key="projects" icon={<TrophyFilled />}>
+          Awards And Projects
+        </Menu.Item>
+        {/* <SubMenu
+          key="projects"
           icon={<TrophyFilled />}
           title="Awards and Projects"
         >
@@ -43,7 +44,7 @@ const NavMenu: FC = () => {
             <Menu.Item key="setting:3">MunchWheel</Menu.Item>
             <Menu.Item key="setting:4">Blast</Menu.Item>
           </Menu.ItemGroup>
-        </SubMenu>
+        </SubMenu> */}
       </Menu>
     );
 }
