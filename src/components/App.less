@@ -1,6 +1,6 @@
-@import "~antd/lib/style/themes/default.less";
-@import "~antd/dist/antd.less"; // Import Ant Design styles by less entry
-@import "~antd/dist/antd.dark.less"; // Introduce the official dark less style entry file
+@import "~antd/dist/antd.dark.css";
+@import "~@ant-design/aliyun-theme/index.less";
+@import "~antd/dist/antd.compact.css";
 
 .App {
   font-family: sans-serif;
@@ -52,7 +52,6 @@ header {
 
 ul,
 li {
-  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -100,14 +99,14 @@ li {
   position: fixed;
   z-index: 1;
   overflow: hidden;
-  padding: 40px 0;
+  padding: 20px 0;
 }
 
 .card-content {
   pointer-events: auto;
   position: relative;
   border-radius: 20px;
-  background: #1c1c1e;
+  background: #fff;
   overflow: hidden;
   width: 100%;
   height: 100%;
@@ -142,7 +141,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 300px;
+  max-width: 500px;
 }
 
 h2 {
@@ -186,7 +185,7 @@ h2 {
 }
 
 p {
-  color: #9d9ca1;
+  color: #838387;
   font-size: 20px;
   line-height: 28px;
 }
@@ -258,6 +257,12 @@ p {
   }
 }
 
+.ant-layout {
+  background: #fff;
+}
+.ant-layout-footer {
+  background: #fff;
+}
 .site-layout-content {
   min-height: 280px;
   padding: 24px;

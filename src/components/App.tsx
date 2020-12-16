@@ -1,6 +1,6 @@
 import './App.less';
 
-import { Layout } from 'antd';
+import { Layout, Divider } from 'antd';
 import React, { FC } from 'react';
 
 import ProfileSummary from './ProfileSummary';
@@ -25,7 +25,7 @@ const App: FC = () => (
               <NavMenu />
             </Fade>
           </Header>
-          <Content style={{ padding: '0 50px', marginTop: 64 }}>
+          <Content style={{ padding: '32px 50px', margin: '32px auto', maxWidth: '1280px' }}>
             <div className="site-layout-content">
               <Switch>
                 <Route path="/ama">
@@ -42,7 +42,8 @@ const App: FC = () => (
               </Switch>
             </div>
           </Content>
-          <Footer style={{ textAlign: 'center' }}>Last updated on 12.13.2020 with love.</Footer>
+          <Divider style={{ margin: 0 }} />
+          <Footer style={{ textAlign: 'center' }}>© 2020 Jason Wang</Footer>
         </Layout>
       </div>
   </Router>

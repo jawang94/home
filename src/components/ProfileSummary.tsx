@@ -1,4 +1,4 @@
-import { Button, PageHeader, Divider, Row, Tag, Typography } from 'antd';
+import { Button, PageHeader, Divider, Row, Col, Tag, Typography } from 'antd';
 import React, { FC } from 'react';
 
 import {
@@ -13,9 +13,9 @@ import MyTimeline from './MyTimeline';
 import Biography from './Biography';
 import { Fade, Slide } from 'react-reveal';
 
-const { Title, Paragraph, Text } = Typography;
+const { Title, Paragraph } = Typography;
 
-const Content = ({ children, extraContent }: any) => {
+export const Content = ({ children, extraContent }: any) => {
   return (
     <Row>
       <div style={{ flex: 1 }}>{children}</div>
@@ -35,9 +35,8 @@ export const guidelyteExperience = (
         />
       }
     >
-      <Paragraph>
-        <Title level={5}>Guidelyte | <Text>Founder, CEO, Chief Engineer</Text>
-        </Title>
+      <Paragraph style={{ paddingRight: '1rem' }}>
+        <Title level={5}>Founder, CEO, Chief Engineer</Title>
         <ul>
           <li>
             Founder, CEO, and Chief Engineer of Guidelyte, a startup whose mission is to create a world where chasing your dreams is exciting, not terrifying.
@@ -65,9 +64,8 @@ export const elevatExperience = (
         />
       }
     >
-      <Paragraph>
-        <Title level={5}>Elevat | <Text>Software Engineer</Text>
-        </Title>
+      <Paragraph style={{ paddingRight: '1rem' }}>
+        <Title level={5}>Software Engineer</Title>
         <ul>
           <li>
             Led front-end development for Elevāt’s Maintenance, Service, and Parts platform with React.js
@@ -98,9 +96,8 @@ export const xemelgoExperience = (
         />
       }
     >
-      <Paragraph>
-        <Title level={5}>Xemelgo | <Text>Software Engineer</Text>
-        </Title>
+      <Paragraph style={{ paddingRight: '1rem' }}>
+        <Title level={5}>Software Engineer</Title>
         <ul>
           <li>
             Led front-end development of Xemelgo’s platform for inventory control and management
@@ -148,19 +145,26 @@ const ProfileSummary: FC = () => {
         <Button key="2" onClick={() => buttonClicked('linkedin')}><LinkedinFilled />Linkedin</Button>,
         <Button key="1" type="primary" onClick={() => buttonClicked('resume')}><FilePdfFilled/>Resume</Button>,
       ]}
-      avatar={{ shape: 'square', size: {xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}, src: jason}}
+      avatar={{ shape: 'circle', size: {xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}, src: jason}}
     >
       <Content>
-        <Slide right>
-          <Title level={3}>Biography</Title>
-          <Biography />
-        </Slide>
         <Divider />
-
-        <Title level={3}>Timeline</Title>
         <Content>
           <Fade bottom>
-            <MyTimeline />
+            <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
+              <Col span={12} className="gutter-row">
+                <Slide right>
+                  <Title level={5}>Biography</Title>
+                  <Biography />
+                </Slide>
+                <Divider />
+
+              </Col>
+              <Col span={12} className="gutter-row">
+                <Title level={5}>Timeline</Title>
+                <MyTimeline />
+              </Col>
+            </Row>
           </Fade>
         </Content>
       </Content>

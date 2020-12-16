@@ -1,7 +1,6 @@
 import { PageHeader} from 'antd';
 import React, { FC } from 'react';
 
-
 const AMAA: FC = () => {
   return (
     <PageHeader
