@@ -14,8 +14,8 @@ const Calendly: FC = () => {
         <div id="schedule_form">
           <div 
             className="calendly-inline-widget"
-            data-url="https://calendly.com/wangjason"
-            style={{ minWidth: '320px', height: '630px' }} />
+            data-url="https://calendly.com/wangjason?hide_landing_page_details=1&hide_gdpr_banner=1"
+            style={{ minWidth: '320px', height: '480px' }} />
         </div>
       </div>
     );

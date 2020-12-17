@@ -98,7 +98,7 @@ export const Card = memo(
 const Overlay = ({ isSelected }: any) => (
   <motion.div
     initial={false}
-    animate={{ opacity: isSelected ? 0.5 : 0 }}
+    animate={{ opacity: isSelected ? 0.25 : 0 }}
     transition={{ duration: 0.2 }}
     style={{ pointerEvents: isSelected ? "auto" : "none" }}
     className="overlay"

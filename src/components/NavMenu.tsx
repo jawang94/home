@@ -1,20 +1,24 @@
 import { Menu } from 'antd';
 import React, { FC, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { QuestionCircleFilled, SmileFilled, TrophyFilled } from '@ant-design/icons';
+import { QuestionCircleFilled, TrophyFilled, HomeFilled } from '@ant-design/icons';
+import styled from 'styled-components';
+
+const StyledMenuItem = styled(Menu.Item)`
+  font-size: 16px;
+`
 
 const NavMenu: FC = () => {
-  const [state, updateState] = useState({current: 'mail'})
+  const [state, updateState] = useState({current: 'aboutme'})
   const history = useHistory();
 
   const ROUTER_MAP: any = {
-    mail: '/',
-    app: '/ama',
+    aboutme: '/',
+    ama: '/ama',
     projects: 'projects'
   }
 
   const handleClick = (e: any) => {
-    console.log('click ', e);
     updateState({ ...state, current: e.key });
     history.push(ROUTER_MAP[e.key])
   };
@@ -22,15 +26,15 @@ const NavMenu: FC = () => {
     const { current } = state;
     return (
       <Menu onClick={handleClick} selectedKeys={[current]} theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-        <Menu.Item key="mail" icon={<SmileFilled />}>
-          About Me
-        </Menu.Item>
-        <Menu.Item key="app" icon={<QuestionCircleFilled />}>
-          AMA
-        </Menu.Item>
-        <Menu.Item key="projects" icon={<TrophyFilled />}>
-          Awards And Projects
-        </Menu.Item>
+        <StyledMenuItem key="aboutme" icon={<HomeFilled style={{ fontSize: '16px' }} />}>
+          <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'aboutme' ? 'orange' : 'transparent'}` }}>Home</span>
+        </StyledMenuItem>
+        <StyledMenuItem key="projects" icon={<TrophyFilled style={{ fontSize: '16px' }} />}>
+          <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'projects' ? 'orange' : 'transparent'}` }}>Awards And Projects</span>
+        </StyledMenuItem>
+        <StyledMenuItem key="ama" icon={<QuestionCircleFilled style={{ fontSize: '16px' }} />}>
+          <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'ama' ? 'orange' : 'transparent'}` }}>Ask Me Anything</span>
+        </StyledMenuItem>
         {/* <SubMenu
           key="projects"
           icon={<TrophyFilled />}

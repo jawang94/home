@@ -1,39 +1,48 @@
 import React from 'react';
 import { Timeline, Collapse, Typography } from 'antd';
+import styled from 'styled-components';
 import { xemelgoExperience, elevatExperience, guidelyteExperience } from './ProfileSummary';
 
 const { Panel } = Collapse;
 
 const { Text } = Typography;
 
+const StyledMenuItem = styled(Timeline.Item)`
+  font-size: 0.85rem;
+`
+
+const StyledPanel = styled(Panel)`
+  font-size: 0.85rem;
+`
+
 export default function MyTimeline() {
   return (
     <>
       <Timeline pending="To be continued..." reverse={true}>
-        <Timeline.Item color="gray"><Text strong>Bye University</Text> | 08.2015</Timeline.Item>
-        <Timeline.Item color="green"><Text strong>Hello World</Text> | 06.2018</Timeline.Item>
-        <Timeline.Item color="green"><Text strong>Graduated Coding Dojo</Text> | 12.2018</Timeline.Item>
-        <Timeline.Item color="green">
+        <StyledMenuItem color="gray"><Text strong>Bye University</Text> | 08.2015</StyledMenuItem>
+        <StyledMenuItem color="green"><Text strong>Hello World</Text> | 06.2018</StyledMenuItem>
+        <StyledMenuItem color="green"><Text strong>Graduated Coding Dojo</Text> | 12.2018</StyledMenuItem>
+        <StyledMenuItem color="green">
           <Collapse ghost>
-            <Panel header={<><Text strong>Joined Xemelgo</Text> | 04.2019</>} key="1">
+            <StyledPanel header={<><Text strong>Joined Xemelgo</Text> | 04.2019</>} key="1">
               {xemelgoExperience}
-            </Panel>
+            </StyledPanel>
           </Collapse>
-        </Timeline.Item>
-        <Timeline.Item color="green">
+        </StyledMenuItem>
+        <StyledMenuItem color="green">
           <Collapse ghost>
-            <Panel header={<><Text strong>Joined Elevat</Text> | 06.2019</>} key="1">
+            <StyledPanel header={<><Text strong>Joined Elevat</Text> | 06.2019</>} key="1">
               {elevatExperience}
-            </Panel>
+            </StyledPanel>
           </Collapse>
-        </Timeline.Item>
-        <Timeline.Item color="blue">
+        </StyledMenuItem>
+        <StyledMenuItem color="blue">
           <Collapse ghost>
-            <Panel header={<><Text strong>Founded Guidelyte</Text> | 06.2020</>} key="1">
+            <StyledPanel header={<><Text strong>Founded Guidelyte</Text> | 06.2020</>} key="1">
               {guidelyteExperience}
-            </Panel>
+            </StyledPanel>
           </Collapse>
-        </Timeline.Item>
+        </StyledMenuItem>
       </Timeline>
     </>
   );

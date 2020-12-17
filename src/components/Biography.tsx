@@ -1,10 +1,25 @@
+import { Typography } from 'antd';
+import styled from 'styled-components';
+
+const { Paragraph, Text } = Typography;
+
+const StyledParagraph = styled(Paragraph)`
+  font-size: 16px;
+  line-height: 1.5;
+`
+
 export default function Biography() {
   return (
-      <div style={{ paddingRight: '2rem' }}>
-        I grew up always thinking I would either be an astronaut or a doctor.
-        Actually, I did go to university for Nursing but eventually left in pursuit of technology.
-        Formal education never worked well for me, but self-directed learning certainly did.
-        I've always been a dreamer and tinkerer.
-      </div>
+      <StyledParagraph>
+          I grew up thinking I would become either an astronaut or a doctor.
+          Here I am, writing to you as a software engineer, inventor, and entrepreneur.
+          Life has its ways. Although, I still wish to go to space.
+          I love working with brilliant minds to create brilliant products.
+          I believe that's how I can make the most difference for others.
+          I'm a serial dreamer and tinkerer.
+          <br/>
+          <br/>
+          <Text keyboard>To live and create for others. That is a beautiful life.</Text>
+      </StyledParagraph>
   );
 }

@@ -11,7 +11,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import { Fade } from 'react-reveal'
+import { Fade } from 'react-reveal';
 import { CardList } from './CardList';
 
 const { Header, Content, Footer } = Layout;
@@ -25,7 +25,7 @@ const App: FC = () => (
               <NavMenu />
             </Fade>
           </Header>
-          <Content style={{ padding: '32px 50px', margin: '32px auto', maxWidth: '1280px' }}>
+          <Content>
             <div className="site-layout-content">
               <Switch>
                 <Route path="/ama">

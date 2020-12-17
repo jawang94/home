@@ -1,4 +1,4 @@
-import { Button, PageHeader, Divider, Row, Col, Tag, Typography } from 'antd';
+import { Button, PageHeader, Divider, Row, Col, Tag, Typography, Card } from 'antd';
 import React, { FC } from 'react';
 
 import {
@@ -12,6 +12,7 @@ import jason from '../img/jason.jpg';
 import MyTimeline from './MyTimeline';
 import Biography from './Biography';
 import { Fade, Slide } from 'react-reveal';
+import Calendly from './Calendly';
 
 const { Title, Paragraph } = Typography;
 
@@ -36,7 +37,7 @@ export const guidelyteExperience = (
       }
     >
       <Paragraph style={{ paddingRight: '1rem' }}>
-        <Title level={5}>Founder, CEO, Chief Engineer</Title>
+        <Title level={4}>Founder, CEO, &amp; Chief Engineer</Title>
         <ul>
           <li>
             Founder, CEO, and Chief Engineer of Guidelyte, a startup whose mission is to create a world where chasing your dreams is exciting, not terrifying.
@@ -65,7 +66,7 @@ export const elevatExperience = (
       }
     >
       <Paragraph style={{ paddingRight: '1rem' }}>
-        <Title level={5}>Software Engineer</Title>
+        <Title level={4}>Software Engineer</Title>
         <ul>
           <li>
             Led front-end development for Elevāt’s Maintenance, Service, and Parts platform with React.js
@@ -97,7 +98,7 @@ export const xemelgoExperience = (
       }
     >
       <Paragraph style={{ paddingRight: '1rem' }}>
-        <Title level={5}>Software Engineer</Title>
+        <Title level={4}>Software Engineer</Title>
         <ul>
           <li>
             Led front-end development of Xemelgo’s platform for inventory control and management
@@ -131,21 +132,26 @@ const buttonClicked = (redirectTo: string) => {
   }
 }
 
+const extraButtons = (
+  <>
+    <Button size="large" key="5" onClick={() => buttonClicked('medium')}><MediumSquareFilled />Medium</Button>
+    <Button size="large" key="4" onClick={() => buttonClicked('email')}><MailFilled />Email</Button>
+    <Button size="large" key="3" onClick={() => buttonClicked('github')}><GithubFilled />GitHub</Button>
+    <Button size="large" key="2" onClick={() => buttonClicked('linkedin')}><LinkedinFilled />Linkedin</Button>
+    <Button size="large" key="1" type="primary" onClick={() => buttonClicked('resume')}><FilePdfFilled/>Resume</Button>
+  </>
+)
+
 const ProfileSummary: FC = () => {
   return (
     <PageHeader
       title="Jason Wang"
       className="site-page-header"
-      subTitle="Software Engineer, Entrepreneur"
-      tags={<Tag color="green">Seeking Opportunities</Tag>}
-      extra={[
-        <Button key="5" onClick={() => buttonClicked('medium')}><MediumSquareFilled />Medium</Button>,
-        <Button key="4" onClick={() => buttonClicked('email')}><MailFilled />Email</Button>,
-        <Button key="3" onClick={() => buttonClicked('github')}><GithubFilled />GitHub</Button>,
-        <Button key="2" onClick={() => buttonClicked('linkedin')}><LinkedinFilled />Linkedin</Button>,
-        <Button key="1" type="primary" onClick={() => buttonClicked('resume')}><FilePdfFilled/>Resume</Button>,
-      ]}
+      subTitle="Software Engineer"
+      tags={<Tag style={{ lineHeight: '24px' }} color="green">Open to opportunities</Tag>}
+      extra={extraButtons}
       avatar={{ shape: 'circle', size: {xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}, src: jason}}
+      style={{ paddingTop: '24px' }}
     >
       <Content>
         <Divider />
@@ -154,15 +160,26 @@ const ProfileSummary: FC = () => {
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
               <Col span={12} className="gutter-row">
                 <Slide right>
-                  <Title level={5}>Biography</Title>
-                  <Biography />
+                  <Card>
+                    <Title level={3}>Biography</Title>
+                    <Biography />
+                  </Card>
                 </Slide>
                 <Divider />
-
+                <Slide left>
+                  <Card>
+                    <Title level={3}>Speak With Me</Title>
+                    <Calendly />
+                  </Card>
+                </Slide>
+                <Divider />
               </Col>
+
               <Col span={12} className="gutter-row">
-                <Title level={5}>Timeline</Title>
-                <MyTimeline />
+                <Card>
+                  <Title level={3}>Timeline</Title>
+                  <MyTimeline />
+                </Card>
               </Col>
             </Row>
           </Fade>
