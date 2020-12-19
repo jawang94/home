@@ -1,17 +1,9 @@
-import { PageHeader, Tag } from 'antd';
-import React, { FC } from 'react';
+import { FC } from 'react';
+import Reddit from './Reddit/App/Container';
 
 const AMAA: FC = () => {
   return (
-    <PageHeader
-      title="Ask Me (almost) Anything"
-      className="site-page-header"
-      // subTitle="Approved questions will appear below"
-      tags={<Tag color="grey">In the works</Tag>}
-      style={{ paddingTop: '24px' }}
-    >
-      Working on it. Please check back later :).
-    </PageHeader>
+    <Reddit />
   )
 }
 
