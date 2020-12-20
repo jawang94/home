@@ -11,6 +11,7 @@ import xemelgo from '../img/xemelgo.png';
 import jason from '../img/jason.jpg';
 import MyTimeline from './MyTimeline';
 import Biography from './Biography';
+import QuoteList from './QuoteList';
 import { Fade, Slide } from 'react-reveal';
 import Calendly from './Calendly';
 
@@ -159,7 +160,7 @@ const ProfileSummary: FC = () => {
           <Fade bottom>
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
               <Col span={12} className="gutter-row">
-                <Slide right>
+                <Slide left>
                   <Card>
                     <Title level={3}>Biography</Title>
                     <Biography />
@@ -176,10 +177,19 @@ const ProfileSummary: FC = () => {
               </Col>
 
               <Col span={12} className="gutter-row">
-                <Card>
-                  <Title level={3}>Timeline</Title>
-                  <MyTimeline />
-                </Card>
+                <Slide right>
+                  <Card>
+                    <Title level={3}>Timeline</Title>
+                    <MyTimeline />
+                  </Card>
+                </Slide>
+                <Divider />
+                <Slide right>
+                  <Card>
+                    <Title level={3}>Quote List</Title>
+                    <QuoteList />
+                  </Card>
+                </Slide>
               </Col>
             </Row>
           </Fade>

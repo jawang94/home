@@ -18,6 +18,6 @@ const Logo = styled(Link)`
   }
 `;
 
-const HeaderLogo = () => <Logo to='/amaa'>Ask me anything</Logo>;
+const HeaderLogo = () => <Logo to='/ama'>Ask me anything</Logo>;
 
 export default HeaderLogo;
