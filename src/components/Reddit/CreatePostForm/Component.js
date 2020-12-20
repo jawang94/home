@@ -19,8 +19,8 @@ const postTypes = [
 class CreatePostForm extends React.Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     const { token, post, history } = this.props;
-    if (!token) history.push('/');
-    if (post) history.push(`/a/${post.category}/${post.id}`);
+    if (!token) history.push('/ama/');
+    if (post) history.push(`/ama/a/${post.category}/${post.id}`);
   }
 
   onSubmit = post => this.props.attemptCreatePost(post);

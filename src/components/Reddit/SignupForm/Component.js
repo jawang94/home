@@ -15,7 +15,7 @@ class SignupForm extends React.Component {
   }
 
   redirectIfLoggedIn() {
-    if (this.props.token) this.props.history.push('/');
+    if (this.props.token) this.props.history.push('/ama/');
   }
 
   onSubmit = ({ username, password }) => {

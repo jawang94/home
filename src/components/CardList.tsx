@@ -1,4 +1,5 @@
 import React, { FC, useEffect } from "react";
+import { Card as AntCard } from 'antd';
 import { Card } from "./Card";
 import { CardData } from "./types";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -43,9 +44,11 @@ export const CardList: FC = () => {
   })
   
   return (
-    <Router>
-      <Route path={["/:id", "/"]} component={List} />
-    </Router>
+    <AntCard>
+      <Router>
+        <Route path={["/projects/:id/", "/projects/"]} component={List} />
+      </Router>
+    </AntCard>
   )
 }
 

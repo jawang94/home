@@ -36,7 +36,7 @@ const App: FC = () => (
                     <CardList />
                   </div>
                 </Route>
-                <Route path="/">
+                <Route exact path="/">
                   <ProfileSummary />
                 </Route>
               </Switch>

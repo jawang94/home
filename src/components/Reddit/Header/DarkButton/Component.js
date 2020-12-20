@@ -17,7 +17,7 @@ const DarkButton = styled.span`
 `;
 
 const HeaderDarkButton = props => (
-  <DarkButton disabled tooltip="dark mode coming soon" onClick={props.toggleDarkTheme}>
+  <DarkButton onClick={props.toggleDarkTheme}>
     <HeaderDarkButtonIcon />
   </DarkButton>
 );

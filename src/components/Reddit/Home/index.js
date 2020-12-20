@@ -25,24 +25,24 @@ const Home = () => (
   <Wrapper>
     <HomeMainSection>
       <Route component={CategoryMenuContainer} />
-      <Route exact path='/' component={PostListContainer} />
+      <Route exact path='/ama/' component={PostListContainer} />
       <Route
         exact
-        path='/a/:category'
+        path='/ama/a/:category'
         render={({ match }) => (
           <PostListContainer category={match.params.category} />
         )}
       />
       <Route
         exact
-        path='/u/:username'
+        path='/ama/u/:username'
         render={({ match }) => (
           <PostListContainer username={match.params.username} />
         )}
       />
       <Route
         exact
-        path='/a/:category/:post'
+        path='/ama/a/:category/:post'
         render={({ match, history }) => (
           <PostDetailContainer id={match.params.post} history={history} />
         )}

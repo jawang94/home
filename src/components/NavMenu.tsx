@@ -1,6 +1,6 @@
 import { Menu } from 'antd';
 import React, { FC, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { QuestionCircleFilled, TrophyFilled, HomeFilled } from '@ant-design/icons';
 import styled from 'styled-components';
 
@@ -9,8 +9,10 @@ const StyledMenuItem = styled(Menu.Item)`
 `
 
 const NavMenu: FC = () => {
-  const [state, updateState] = useState({current: 'aboutme'})
   const history = useHistory();
+  const location = useLocation();
+  console.log(location.pathname)
+  const [state, updateState] = useState({current: location.pathname === '/' ? 'aboutme' : location.pathname.split('/')[1]})
 
   const ROUTER_MAP: any = {
     aboutme: '/',
@@ -25,7 +27,7 @@ const NavMenu: FC = () => {
 
     const { current } = state;
     return (
-      <Menu onClick={handleClick} selectedKeys={[current]} theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
+      <Menu onClick={handleClick} selectedKeys={[current]} theme="dark" mode="horizontal">
         <StyledMenuItem key="aboutme" icon={<HomeFilled style={{ fontSize: '16px' }} />}>
           <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'aboutme' ? 'orange' : 'transparent'}` }}>Home</span>
         </StyledMenuItem>

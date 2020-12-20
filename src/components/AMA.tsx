@@ -1,9 +1,12 @@
 import { FC } from 'react';
+import { Card } from 'antd';
 import Reddit from './Reddit/App/Container';
 
 const AMAA: FC = () => {
   return (
-    <Reddit />
+    <Card>
+      <Reddit />
+    </Card>
   )
 }
 

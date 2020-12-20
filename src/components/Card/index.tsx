@@ -43,7 +43,7 @@ export const Card = memo(
     const constraints = useScrollConstraints(cardRef, isSelected);
 
     function checkSwipeToDismiss() {
-      y.get() > dismissDistance && history.push("/");
+      y.get() > dismissDistance && history.push("/projects/");
     }
 
     function checkZIndex(latest: any) {
@@ -88,7 +88,7 @@ export const Card = memo(
             <ContentPlaceholder />
           </motion.div>
         </div>
-        {!isSelected && <Link to={id} className={`card-open-link`} />}
+        {!isSelected && <Link to={`/projects/${id}`} className={`card-open-link`} />}
       </li>
     );
   },
@@ -103,6 +103,6 @@ const Overlay = ({ isSelected }: any) => (
     style={{ pointerEvents: isSelected ? "auto" : "none" }}
     className="overlay"
   >
-    <Link to="/" />
+    <Link to="/projects/" />
   </motion.div>
 );
