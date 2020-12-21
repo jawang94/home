@@ -11,7 +11,7 @@ export const mapStateToProps = state => ({
 
 const mapDispatchToProps = { fetchPost };
 
-const enhance = compose(
+const enhance: any = compose(
   withAuth,
   connect(
     mapStateToProps,

@@ -13,7 +13,7 @@ import withAuth from '../../../utils/withAuth';
 import CreatePostForm from './Component';
 
 const validate = fields => {
-  const errors = {};
+  const errors: any = {};
   const title = fields.title ? fields.title : '';
   const url = fields.url ? fields.url : '';
   const type = fields.type ? fields.type : '';
@@ -35,7 +35,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = { attemptCreatePost };
 
-const enhance = compose(
+const enhance: any = compose(
   reduxForm({
     form: 'createPost',
     initialValues: { category: categories[0], type: 'link' },

@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = { attemptSignup };
 
-const enhance = compose(
+const enhance: any = compose(
   reduxForm({ form: 'signup', validate }),
   withAuth,
   connect(

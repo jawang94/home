@@ -16,7 +16,7 @@ const postTypes = [
   }
 ];
 
-class CreatePostForm extends React.Component {
+class CreatePostForm extends React.Component<any, any, any> {
   componentDidUpdate(prevProps, prevState, snapshot) {
     const { token, post, history } = this.props;
     if (!token) history.push('/ama/');

@@ -6,7 +6,7 @@ import PostVote from './Component';
 
 const mapDispatchToProps = { attemptVote };
 
-const enhance = compose(
+const enhance: any = compose(
   withAuth,
   connect(
     null,

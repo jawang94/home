@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = { attemptLogin };
 
-const enhance = compose(
+const enhance: any = compose(
   reduxForm({ form: 'login' }),
   withAuth,
   connect(

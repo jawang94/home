@@ -5,7 +5,7 @@ import renderField from '../shared/form/renderField';
 import { usernameValidator, passwordValidator } from '../../../utils/validators';
 import SubmitButton from '../shared/form/SubmitButton';
 
-class SignupForm extends React.Component {
+class SignupForm extends React.Component<any, any, any> {
   componentDidMount() {
     this.redirectIfLoggedIn();
   }

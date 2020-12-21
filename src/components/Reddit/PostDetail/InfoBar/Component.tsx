@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   }
 `;
 
-class PostDetailInfoBar extends React.Component {
+class PostDetailInfoBar extends React.Component<any, any, any> {
   deletePost = () => this.props.attemptDeletePost();
 
   render() {
