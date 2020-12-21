@@ -6,7 +6,7 @@ import CommentForm from './Component';
 
 const mapDispatchToProps = { attemptCreateComment };
 
-const enhance = compose(
+const enhance: any = compose(
   reduxForm({ form: 'comment' }),
   connect(
     null,

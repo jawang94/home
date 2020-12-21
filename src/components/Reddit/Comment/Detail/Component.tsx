@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   font-size: 13px;
 `;
 
-class CommentDetail extends React.Component {
+class CommentDetail extends React.Component<any, any, any> {
   deleteComment = () => this.props.attemptDeleteComment(this.props.id);
 
   render() {

@@ -6,7 +6,7 @@ import PostDetailInfoBarContainer from './InfoBar/Container';
 import CommentFormContainer from '../CommentForm/Container';
 import PostDetailCommentSection from './CommentSection';
 
-class PostDetail extends React.Component {
+class PostDetail extends React.Component<any, any, any> {
   componentDidMount() {
     this.props.fetchPost(this.props.id);
   }

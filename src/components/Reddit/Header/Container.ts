@@ -6,7 +6,7 @@ import Header from './Component';
 
 const mapDispatchToProps = { logout };
 
-const enhance = compose(
+const enhance: any = compose(
   withAuth,
   connect(null, mapDispatchToProps)
 );

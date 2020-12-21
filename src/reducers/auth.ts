@@ -10,7 +10,7 @@ import {
 } from '../actions/auth';
 
 const token = localStorage.getItem('token');
-const user = token && jwtDecode(token).user;
+const user = token && jwtDecode<any>(token).user;
 
 const initialState = {
   ...(token && { token }),
@@ -24,7 +24,7 @@ export default (state = initialState, action) => {
       return { ...state, loading: true };
     case SIGNUP_SUCCESS:
     case LOGIN_SUCCESS:
-      const user = jwtDecode(action.token).user;
+      const user = jwtDecode<any>(action.token).user;
       return {
         ...state,
         loading: false,

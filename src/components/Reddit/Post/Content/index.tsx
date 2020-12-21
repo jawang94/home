@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   min-width: 0;
 `;
 
-const renderContent = props => {
+const renderContent = (props): any => {
   switch (props.type) {
     case 'link':
       return <PostContentPreview>{props.url}</PostContentPreview>;
@@ -30,26 +30,32 @@ const renderContent = props => {
   }
 };
 
-const PostContent = ({
-  url,
-  title,
-  type,
-  text,
-  commentCount,
-  showFullPost,
-  ...details
-}) => (
-  <Wrapper>
-    <PostContentTitle
-      url={url}
-      title={title}
-      type={type}
-      full={showFullPost}
-      {...details}
-    />
-    {renderContent({ type, url, text, showFullPost })}
-    <PostContentDetail commentCount={commentCount} {...details} />
-  </Wrapper>
-);
+const PostContent = (props: any) => {
+  const {
+    url,
+    title,
+    type,
+    text,
+    commentCount,
+    showFullPost,
+    ...details
+  } = props
+
+  return (
+    <Wrapper>
+      <PostContentTitle
+        url={url}
+        title={title}
+        type={type}
+        full={showFullPost}
+        {...details}
+      />
+      {renderContent({ type, url, text, showFullPost })}
+      <PostContentDetail commentCount={commentCount} {...details} />
+    </Wrapper>
+  )
+}
+
+
 
 export default PostContent;

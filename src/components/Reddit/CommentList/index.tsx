@@ -13,7 +13,7 @@ const mapComments = comments =>
   ));
 
 const sortComments = comments =>
-  comments.sort((a, b) => new Date(b.created) - new Date(a.created));
+  comments.sort((a: any, b: any) => +new Date(b.created) - +new Date(a.created));
 
 const CommentList = ({ comments }) =>
   comments && <List>{mapComments(sortComments(comments))}</List>;

@@ -21,7 +21,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Empty = ({ comments }) => {
+const Empty = ({ comments }: any) => {
   const message = comments ? 'no comments' : "there's nothing here...";
   return <Wrapper comments={comments}>{message}</Wrapper>;
 };

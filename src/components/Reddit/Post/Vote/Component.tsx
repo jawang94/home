@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   color: ${props => props.theme.normalText};
 `;
 
-class PostVote extends React.Component {
+class PostVote extends React.Component<any, any, any> {
   constructor(props) {
     super(props);
     const didVote = PostVote.existingVote(props);

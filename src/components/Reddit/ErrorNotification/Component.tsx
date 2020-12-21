@@ -36,7 +36,7 @@ const Wrapper = styled.div`
   }
 `;
 
-class ErrorNotification extends React.Component {
+class ErrorNotification extends React.Component<any, any, any> {
   render() {
     return (
       <TransitionGroup component={null}>

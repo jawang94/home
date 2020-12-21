@@ -6,7 +6,7 @@ import PostDetailInfoBar from './Component';
 
 const mapDispatchToProps = { attemptDeletePost };
 
-const enhance = compose(
+const enhance: any = compose(
   withAuth,
   connect(
     null,

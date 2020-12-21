@@ -6,7 +6,7 @@ import CommentDetail from './Component';
 
 const mapDispatchToProps = { attemptDeleteComment };
 
-const enhance = compose(
+const enhance: any = compose(
   withAuth,
   connect(
     null,
