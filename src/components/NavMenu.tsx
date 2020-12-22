@@ -27,7 +27,7 @@ const NavMenu: FC = () => {
 
     const { current } = state;
     return (
-      <Menu onClick={handleClick} selectedKeys={[current]} theme="dark" mode="horizontal">
+      <Menu onClick={handleClick} selectedKeys={[current]} theme="dark" mode="horizontal" style={{ zIndex: 15 }}>
         <StyledMenuItem key="aboutme" icon={<HomeFilled style={{ fontSize: '16px' }} />}>
           <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'aboutme' ? 'orange' : 'transparent'}` }}>Home</span>
         </StyledMenuItem>

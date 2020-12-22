@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import { Fade } from 'react-reveal';
 import { CardList } from './CardList';
+import ScrollUpButton from "react-scroll-up-button";
 
 const { Header, Content, Footer } = Layout;
 
@@ -20,7 +21,7 @@ const App: FC = () => (
   <Router>
       <div className="App">
         <Layout className="layout">
-          <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+          <Header style={{ position: 'fixed', zIndex: 15, width: '100%' }}>
             <Fade>
               <NavMenu />
             </Fade>
@@ -45,6 +46,7 @@ const App: FC = () => (
           <Divider style={{ margin: 0 }} />
           <Footer style={{ textAlign: 'center' }}>© 2020 Jason Wang</Footer>
         </Layout>
+        <ScrollUpButton />
       </div>
   </Router>
 );
