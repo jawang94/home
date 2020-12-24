@@ -10,6 +10,7 @@ import { Image } from "./Image";
 import { openSpring, closeSpring } from "./animations";
 import { useScrollConstraints } from "../../utils/use-scroll-constraints";
 import { useWheelScroll } from "../../utils/use-wheel-scroll";
+import cardContent from '../../utils/cardContent';
 
 interface Props extends CardData {
   isSelected: boolean;
@@ -30,7 +31,8 @@ export const Card = memo(
     category,
     history,
     pointOfInterest,
-    backgroundColor
+    backgroundColor,
+    link,
   }: Props) => {
     const y = useMotionValue(0);
     const zIndex = useMotionValue(isSelected ? 2 : 0);
@@ -84,8 +86,8 @@ export const Card = memo(
               pointOfInterest={pointOfInterest}
               backgroundColor={backgroundColor}
             />
-            <Title title={title} category={category} isSelected={isSelected} />
-            <ContentPlaceholder />
+            <Title title={title} category={category} link={link} isSelected={isSelected} />
+            <ContentPlaceholder content={cardContent[id]} />
           </motion.div>
         </div>
         {!isSelected && <Link to={`/projects/${id}`} className={`card-open-link`} />}

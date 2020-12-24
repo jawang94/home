@@ -4,4 +4,5 @@ export interface CardData {
   title: string;
   pointOfInterest: number;
   backgroundColor: string;
+  link: string;
 }
