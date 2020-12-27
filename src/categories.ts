@@ -1,8 +1,8 @@
 const categories = [
-  'music',
-  'funny',
-  'videos',
   'programming',
+  'mentorship',
+  'random',
+  'videos',
   'news',
   'fashion'
 ];

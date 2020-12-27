@@ -1,5 +1,7 @@
-import { Button, PageHeader, Divider, Row, Col, Tag, Typography, Card } from 'antd';
+import { Button, Card, Col, Divider, PageHeader, Row, Tag, Typography } from 'antd';
 import React, { FC } from 'react';
+import { Fade, Slide } from 'react-reveal';
+import styled from 'styled-components';
 
 import {
     FilePdfFilled, GithubFilled, LinkedinFilled, MailFilled, MediumSquareFilled
@@ -7,15 +9,21 @@ import {
 
 import elevat from '../img/elevat.png';
 import guidelyte from '../img/guidelyte.png';
-import xemelgo from '../img/xemelgo.png';
 import jason from '../img/jason.jpg';
-import MyTimeline from './MyTimeline';
+import xemelgo from '../img/xemelgo.png';
 import Biography from './Biography';
-import QuoteList from './QuoteList';
-import { Fade, Slide } from 'react-reveal';
 import Calendly from './Calendly';
+import MyTimeline from './MyTimeline';
+import QuoteList from './QuoteList';
+import { Article } from './Article';
 
 const { Title, Paragraph } = Typography;
+
+const StyledButton = styled(Button)`
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+`
 
 export const Content = ({ children, extraContent }: any) => {
   return (
@@ -135,11 +143,11 @@ const buttonClicked = (redirectTo: string) => {
 
 const extraButtons = (
   <>
-    <Button size="large" key="5" onClick={() => buttonClicked('medium')}><MediumSquareFilled />Medium</Button>
-    <Button size="large" key="4" onClick={() => buttonClicked('email')}><MailFilled />Email</Button>
-    <Button size="large" key="3" onClick={() => buttonClicked('github')}><GithubFilled />GitHub</Button>
-    <Button size="large" key="2" onClick={() => buttonClicked('linkedin')}><LinkedinFilled />Linkedin</Button>
-    <Button size="large" key="1" type="primary" onClick={() => buttonClicked('resume')}><FilePdfFilled/>Resume</Button>
+    <StyledButton size="large" key="5" onClick={() => buttonClicked('medium')}><MediumSquareFilled />Medium</StyledButton>
+    <StyledButton size="large" key="4" onClick={() => buttonClicked('email')}><MailFilled />Email</StyledButton>
+    <StyledButton size="large" key="3" onClick={() => buttonClicked('github')}><GithubFilled />GitHub</StyledButton>
+    <StyledButton size="large" key="2" onClick={() => buttonClicked('linkedin')}><LinkedinFilled />Linkedin</StyledButton>
+    <StyledButton size="large" key="1" type="primary" onClick={() => buttonClicked('resume')}><FilePdfFilled/>Resume</StyledButton>
   </>
 )
 
@@ -148,21 +156,21 @@ const ProfileSummary: FC = () => {
     <PageHeader
       title="Jason Wang"
       className="site-page-header"
-      subTitle="Software Engineer"
-      tags={<Tag style={{ lineHeight: '24px' }} color="green">Open to opportunities</Tag>}
+      subTitle="Seattle, WA"
+      tags={<Tag style={{ fontSize:'14px', lineHeight: '20px' }} color="green">Open To Opportunities</Tag>}
       extra={extraButtons}
       avatar={{ shape: 'circle', size: {xs: 24, sm: 32, md: 40, lg: 64, xl: 80, xxl: 100}, src: jason}}
       style={{ paddingTop: '24px' }}
     >
       <Content>
-        <Divider />
+        <Divider style={{ margin: '12px 0' }} />
         <Content>
           <Fade bottom>
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
               <Col span={12} className="gutter-row">
                 <Slide left>
                   <Card>
-                    <Title level={3}>Biography</Title>
+                    <Title level={3}>Welcome</Title>
                     <Biography />
                   </Card>
                 </Slide>
@@ -188,6 +196,9 @@ const ProfileSummary: FC = () => {
                   <Card>
                     <Title level={3}>Quote List</Title>
                     <QuoteList />
+                  </Card>
+                  <Card>
+                    <Article />
                   </Card>
                 </Slide>
               </Col>

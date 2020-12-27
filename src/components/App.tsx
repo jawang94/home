@@ -21,7 +21,7 @@ const App: FC = () => (
   <Router>
       <div className="App">
         <Layout className="layout">
-          <Header style={{ position: 'fixed', zIndex: 15, width: '100%' }}>
+          <Header>
             <Fade>
               <NavMenu />
             </Fade>
@@ -44,7 +44,7 @@ const App: FC = () => (
             </div>
           </Content>
           <Divider style={{ margin: 0 }} />
-          <Footer style={{ textAlign: 'center' }}>© 2020 Jason Wang</Footer>
+          <Footer style={{ textAlign: 'center' }}>© 2020 Designed &amp; Developed by Jason Wang</Footer>
         </Layout>
         <ScrollUpButton />
       </div>

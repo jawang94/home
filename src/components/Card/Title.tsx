@@ -18,7 +18,7 @@ export const Title = ({ title, category, link, isSelected }: any) => {
       style={{ ...inverted, originX: 0, originY: 0 }}
     >
       <span className="category">{category}</span>
-      {isSelected && link.length ? (<h2><a style={{ fontSize: 20, color: '#fff',    textDecoration: 'underline' }} href={link} target="_blank">{title}</a>{' '}<FiLink size={15} /></h2>) : (<h2>{title}</h2>)}
+      {isSelected && link.length ? (<h2><a style={{ fontSize: 20, color: '#fff', textDecoration: 'underline' }} href={link} target="_blank">{title}</a>{' '}<FiLink size={15} /></h2>) : (<h2>{title}</h2>)}
     </motion.div>
   );
 };

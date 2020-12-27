@@ -5,7 +5,8 @@ import { QuestionCircleFilled, TrophyFilled, HomeFilled } from '@ant-design/icon
 import styled from 'styled-components';
 
 const StyledMenuItem = styled(Menu.Item)`
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 600;
 `
 
 const NavMenu: FC = () => {
@@ -27,7 +28,7 @@ const NavMenu: FC = () => {
 
     const { current } = state;
     return (
-      <Menu onClick={handleClick} selectedKeys={[current]} theme="dark" mode="horizontal" style={{ zIndex: 15 }}>
+      <Menu onClick={handleClick} selectedKeys={[current]} theme="dark" mode="horizontal" style={{ zIndex: 15, backgroundColor: '#24292e' }}>
         <StyledMenuItem key="aboutme" icon={<HomeFilled style={{ fontSize: '16px' }} />}>
           <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'aboutme' ? 'orange' : 'transparent'}` }}>Home</span>
         </StyledMenuItem>
