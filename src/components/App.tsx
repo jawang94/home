@@ -1,4 +1,5 @@
 import './App.less';
+import 'react-image-lightbox/style.css';
 
 import { Layout, Divider } from 'antd';
 import React, { FC } from 'react';

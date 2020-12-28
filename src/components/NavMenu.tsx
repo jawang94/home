@@ -12,8 +12,8 @@ const StyledMenuItem = styled(Menu.Item)`
 const NavMenu: FC = () => {
   const history = useHistory();
   const location = useLocation();
-  console.log(location.pathname)
   const [state, updateState] = useState({current: location.pathname === '/' ? 'aboutme' : location.pathname.split('/')[1]})
+  const { current } = state;
 
   const ROUTER_MAP: any = {
     aboutme: '/',
@@ -26,34 +26,19 @@ const NavMenu: FC = () => {
     history.push(ROUTER_MAP[e.key])
   };
 
-    const { current } = state;
-    return (
-      <Menu onClick={handleClick} selectedKeys={[current]} theme="dark" mode="horizontal" style={{ zIndex: 15, backgroundColor: '#24292e' }}>
-        <StyledMenuItem key="aboutme" icon={<HomeFilled style={{ fontSize: '16px' }} />}>
-          <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'aboutme' ? 'orange' : 'transparent'}` }}>Home</span>
-        </StyledMenuItem>
-        <StyledMenuItem key="projects" icon={<TrophyFilled style={{ fontSize: '16px' }} />}>
-          <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'projects' ? 'orange' : 'transparent'}` }}>Awards And Projects</span>
-        </StyledMenuItem>
-        <StyledMenuItem key="ama" icon={<QuestionCircleFilled style={{ fontSize: '16px' }} />}>
-          <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'ama' ? 'orange' : 'transparent'}` }}>Ask Me Anything</span>
-        </StyledMenuItem>
-        {/* <SubMenu
-          key="projects"
-          icon={<TrophyFilled />}
-          title="Awards and Projects"
-        >
-          <Menu.ItemGroup title="Awards">
-            <Menu.Item key="setting:1">TesselloScore - 1st @DefHacks'19</Menu.Item>
-            <Menu.Item key="setting:2">FanScoop - 1st @SacHacks'18</Menu.Item>
-          </Menu.ItemGroup>
-          <Menu.ItemGroup title="Projects">
-            <Menu.Item key="setting:3">MunchWheel</Menu.Item>
-            <Menu.Item key="setting:4">Blast</Menu.Item>
-          </Menu.ItemGroup>
-        </SubMenu> */}
-      </Menu>
-    );
+  return (
+    <Menu onClick={handleClick} selectedKeys={[current]} theme="dark" mode="horizontal" style={{ zIndex: 15, backgroundColor: '#24292e' }}>
+      <StyledMenuItem key="aboutme" icon={<HomeFilled style={{ fontSize: '16px' }} />}>
+        <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'aboutme' ? 'orange' : 'transparent'}` }}>Home</span>
+      </StyledMenuItem>
+      <StyledMenuItem key="ama" icon={<QuestionCircleFilled style={{ fontSize: '16px' }} />}>
+        <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'ama' ? 'orange' : 'transparent'}` }}>Ask Me Anything</span>
+      </StyledMenuItem>
+      <StyledMenuItem disabled key="projects" icon={<TrophyFilled style={{ fontSize: '16px' }} />}>
+        <span style={{ border: '2px solid transparent', borderBottomColor: `${current === 'projects' ? 'orange' : 'transparent'}` }}>Awards And Projects</span>
+      </StyledMenuItem>
+    </Menu>
+  );
 }
 
 export default NavMenu;

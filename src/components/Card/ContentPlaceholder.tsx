@@ -3,7 +3,7 @@ import { motion, useInvertedScale } from "framer-motion";
 
 export const ContentPlaceholder = React.memo(({ content }: {content: string[]}) => {
   const inverted = useInvertedScale();
-  console.log(content)
+
   return (
     <motion.div
       className="content-container"

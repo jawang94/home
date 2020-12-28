@@ -19,7 +19,7 @@ export default function Biography() {
         I love creating brilliant products that fit seamlessly into your life.
       </StyledParagraph>
       <StyledParagraph>
-        I have worked at two IoT startups, founded my own company, and continue to seek greater challenges.
+        My past experiences include 1st Place at two Hackathons, software engineering at two IoT startups, and founding my own internet company.
       </StyledParagraph>
     </>
   );

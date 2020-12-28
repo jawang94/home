@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { FC, useState } from 'react';
+import Lightbox from 'react-image-lightbox';
 import styled from 'styled-components';
 
 const StyledArticle = styled.article`
@@ -54,6 +55,8 @@ const StyledBodyLeftAnchor = styled.a`
   justify-content: center;
   background-color: var(--color-bg-canvas);
   border-radius: 50%;
+  height: 56px;
+  width: 56px;
   box-shadow: var(--color-shadow-medium);
 `
 
@@ -77,12 +80,15 @@ const StyledBodyRightH1 = styled.h1`
 `
 
 const StyledBodyRightAnchor = styled.a`
-  color: var(--color-text-link);
+  color: var(--color-text-link) !important;
   text-decoration: none;
   line-height: 1.25;
   font-size: 24px;
   font-weight: 300;
-  color: var(--color-text-primary) !important;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 const StyledBodyRightMarkdownDiv = styled.div`
@@ -98,35 +104,44 @@ interface Props {
   
 }
 
-export const Article = (props: Props) => {
+export const Article: FC = (props: Props) => {
+  const [isOpen, toggleIsOpen] = useState(false);
+
   return (
     <StyledArticle>
-      <StyledAnchor>
-        <StyledImg src="https://marketplace-screenshots.githubusercontent.com/4693/07293800-a0d9-11e9-8f11-d63647851f04" alt/>
+      <StyledAnchor onClick={() => toggleIsOpen(true)}>
+        <StyledImg src="https://user-images.githubusercontent.com/41667764/103190801-5e9c0480-4887-11eb-8e99-33b41df2aa77.png" alt/>
       </StyledAnchor>
       <StyledContentDiv>
         <StyledSubHeadingDiv>
-          App recommended by Github
+          Creating a world where chasing your dreams is exciting, not terrifying.
         </StyledSubHeadingDiv>
         
         <StyledBodyDiv>
           <StyledBodyLeftDiv>
-            <StyledBodyLeftAnchor>
-              <StyledBodyLeftImg src="https://avatars0.githubusercontent.com/ml/4693?s=400&v=4" alt="CommitCheck" />
+            <StyledBodyLeftAnchor href="https://www.linkedin.com/company/guidelyte">
+              <StyledBodyLeftImg src="https://user-images.githubusercontent.com/41667764/103190879-a327a000-4887-11eb-9869-2d4066782151.png" alt="Guidelyte" />
             </StyledBodyLeftAnchor>
           </StyledBodyLeftDiv>
 
           <StyledBodyRightDiv>
             <StyledBodyRightH1>
-            <StyledBodyRightAnchor href="https://github.com/marketplace/commitcheck">CommitCheck</StyledBodyRightAnchor>
+            <StyledBodyRightAnchor href="https://github.com/guidelyte">Guidelyte</StyledBodyRightAnchor>
             </StyledBodyRightH1>
 
             <StyledBodyRightMarkdownDiv>
-              <p>CommitCheck ensures your commit messages are consistent and contain all required information. You can check that commits contain a JIRA number or ensure commits don't contain WIP.</p>
+              <p>Guidelyte is a single source of truth for your job search. We aggregate information scattered across the internet and empower you with the tools to manage all the data around your job search.</p>
             </StyledBodyRightMarkdownDiv>
           </StyledBodyRightDiv>
         </StyledBodyDiv>
       </StyledContentDiv>
+
+      {isOpen && (
+        <Lightbox
+          mainSrc="https://user-images.githubusercontent.com/41667764/103190801-5e9c0480-4887-11eb-8e99-33b41df2aa77.png"
+          onCloseRequest={() => toggleIsOpen(false)}
+        />
+      )}
     </StyledArticle>
   )
 }

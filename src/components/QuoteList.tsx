@@ -14,7 +14,8 @@ export default function QuoteList() {
         <ul>
           <li><Text copyable>Properly frame a question and the answer will be comparatively easy.</Text></li>
           <li><Text copyable>If a design is taking too long, the design is probably wrong.</Text></li>
-          <li><Text copyable>Make every detail perfect and limit the number of details to perfect.</Text></li>
+          <li><Text copyable>Every design is to some degree wrong.</Text></li>
+          <li><Text copyable>The goal of iterating is to get less wrong over time.</Text></li>
         </ul>
       </StyledParagraph>
   );

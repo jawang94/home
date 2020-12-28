@@ -182,6 +182,10 @@ const ProfileSummary: FC = () => {
                   </Card>
                 </Slide>
                 <Divider />
+                <Card>
+                  <Title level={3}>Quote List</Title>
+                  <QuoteList />
+                </Card>
               </Col>
 
               <Col span={12} className="gutter-row">
@@ -194,10 +198,7 @@ const ProfileSummary: FC = () => {
                 <Divider />
                 <Slide right>
                   <Card>
-                    <Title level={3}>Quote List</Title>
-                    <QuoteList />
-                  </Card>
-                  <Card>
+                    <Title level={3}>Noteworthy</Title>
                     <Article />
                   </Card>
                 </Slide>
