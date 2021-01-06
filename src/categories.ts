@@ -1,10 +1,10 @@
 const categories = [
+  'techmentorship',
   'programming',
-  'mentorship',
+  'productivity',
+  'reading',
+  'fashion',
   'random',
-  'videos',
-  'news',
-  'fashion'
 ];
 
 export default categories;
