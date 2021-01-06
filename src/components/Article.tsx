@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import Lightbox from 'react-image-lightbox';
 import styled from 'styled-components';
+import { ArticleDataShape } from '../utils/articleData';
 
 const StyledArticle = styled.article`
   margin-top: 24px !important;
@@ -25,7 +26,8 @@ const StyledImg = styled.img`
   display: block !important;
   margin-right: auto !important;
   margin-left: auto !important;
-  max-width: 100% !important;
+  max-width: ${(props: any) => props.theme.maxWidth} !important;
+  max-height: 100% !important;
   border-style: none !important;
 `
 
@@ -101,36 +103,38 @@ const StyledBodyRightMarkdownDiv = styled.div`
 `
 
 interface Props {
-  
+  content: ArticleDataShape;
+  vertical?: boolean;
 }
 
-export const Article: FC = (props: Props) => {
+export const Article: FC<Props> = props => {
   const [isOpen, toggleIsOpen] = useState(false);
+  const { topImage, topSubHeading, leftAnchor, leftImage, rightAnchor,rightHeaderText, rightBodyText } = props.content;
 
   return (
     <StyledArticle>
       <StyledAnchor onClick={() => toggleIsOpen(true)}>
-        <StyledImg src="https://user-images.githubusercontent.com/41667764/103190801-5e9c0480-4887-11eb-8e99-33b41df2aa77.png" alt/>
+        <StyledImg src={topImage} alt="top-image" theme={{ maxWidth: props.vertical ? "50%" : "100%" }}/>
       </StyledAnchor>
       <StyledContentDiv>
         <StyledSubHeadingDiv>
-          Creating a world where chasing your dreams is exciting, not terrifying.
+          {topSubHeading}
         </StyledSubHeadingDiv>
         
         <StyledBodyDiv>
           <StyledBodyLeftDiv>
-            <StyledBodyLeftAnchor href="https://www.linkedin.com/company/guidelyte">
-              <StyledBodyLeftImg src="https://user-images.githubusercontent.com/41667764/103190879-a327a000-4887-11eb-9869-2d4066782151.png" alt="Guidelyte" />
+            <StyledBodyLeftAnchor href={leftAnchor}>
+              <StyledBodyLeftImg src={leftImage} alt="left-image" />
             </StyledBodyLeftAnchor>
           </StyledBodyLeftDiv>
 
           <StyledBodyRightDiv>
             <StyledBodyRightH1>
-            <StyledBodyRightAnchor href="https://github.com/guidelyte">Guidelyte</StyledBodyRightAnchor>
+            <StyledBodyRightAnchor href={rightAnchor}>{rightHeaderText}</StyledBodyRightAnchor>
             </StyledBodyRightH1>
 
             <StyledBodyRightMarkdownDiv>
-              <p>Guidelyte is a single source of truth for your job search. We aggregate information scattered across the internet and empower you with the tools to manage all the data around your job search.</p>
+              <p>{rightBodyText}</p>
             </StyledBodyRightMarkdownDiv>
           </StyledBodyRightDiv>
         </StyledBodyDiv>
@@ -138,8 +142,9 @@ export const Article: FC = (props: Props) => {
 
       {isOpen && (
         <Lightbox
-          mainSrc="https://user-images.githubusercontent.com/41667764/103190801-5e9c0480-4887-11eb-8e99-33b41df2aa77.png"
+          mainSrc={topImage}
           onCloseRequest={() => toggleIsOpen(false)}
+          imagePadding={50}
         />
       )}
     </StyledArticle>

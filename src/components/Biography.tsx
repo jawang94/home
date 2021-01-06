@@ -4,22 +4,25 @@ import styled from 'styled-components';
 const { Paragraph } = Typography;
 
 const StyledParagraph = styled(Paragraph)`
-  font-size: 0.85rem;
-  line-height: 20px;
-  font-weight: 400;
+  margin-bottom: 8px !important;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  color: var(--color-text-secondary) !important;
 `
 
 export default function Biography() {
   return (
     <>
       <StyledParagraph>
-        I'm a self-taught software engineer, inventor, and entrepreneur.
+        I'm Jason. I'm a self-taught software engineer, inventor, and serial entrepreneur.
       </StyledParagraph>
       <StyledParagraph>
-        I love creating brilliant products that fit seamlessly into your life.
+        I love creating social products that focus on bring people together and make people better.
       </StyledParagraph>
       <StyledParagraph>
-        My past experiences include 1st Place at two Hackathons, software engineering at two IoT startups, and founding my own internet company.
+        In the last two years, I've worked as a software engineer for two IoT startups, won 1st place at two hackathons, and co-founded a software startup.
       </StyledParagraph>
     </>
   );

@@ -6,13 +6,14 @@
   padding: 0;
 }
 
-html {
+#root, html, body {
   height: 100%;
 }
 
 body {
-  min-height: 100%;
-  padding-bottom: 48px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
   font-family: 'IBM Plex Sans', 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
   -webkit-font-smoothing: antialiased;
 }

@@ -16,6 +16,7 @@ import Calendly from './Calendly';
 import MyTimeline from './MyTimeline';
 import QuoteList from './QuoteList';
 import { Article } from './Article';
+import articleData from '../utils/articleData';
 
 const { Title, Paragraph } = Typography;
 
@@ -23,6 +24,31 @@ const StyledButton = styled(Button)`
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
+`
+
+const StyledAnchor = styled.a`
+  display: block !important;
+  border-bottom: 1px solid var(--color-border-primary) !important;
+  color: var(--color-text-link);
+  text-decoration: none;
+`
+
+const StyledImg = styled.img`
+  display: block !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  border-style: none !important;
+`
+
+const StyledParagraph = styled(Paragraph)`
+  margin-bottom: 8px !important;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  color: var(--color-text-secondary) !important;
 `
 
 export const Content = ({ children, extraContent }: any) => {
@@ -170,7 +196,7 @@ const ProfileSummary: FC = () => {
               <Col span={12} className="gutter-row">
                 <Slide left>
                   <Card>
-                    <Title level={3}>Welcome</Title>
+                    <Title level={3}>Hello</Title>
                     <Biography />
                   </Card>
                 </Slide>
@@ -182,10 +208,36 @@ const ProfileSummary: FC = () => {
                   </Card>
                 </Slide>
                 <Divider />
-                <Card>
-                  <Title level={3}>Quote List</Title>
-                  <QuoteList />
-                </Card>
+                <Slide left>
+                  <Card>
+                    <Title level={3}>Favorite Quotes</Title>
+                    <QuoteList />
+                  </Card>
+                </Slide>
+                <Divider />
+                <Slide left>
+                  <Card>
+                    <Title level={3}>Food App</Title>
+                    <Article content={articleData.munchwheel} />
+                  </Card>
+                </Slide>
+                <Divider />
+                <Slide left>
+                  <Card>
+                    <Title level={3}>Chat App</Title>
+                    <Article content={articleData.blast} />
+                  </Card>
+                </Slide>
+                <Divider />
+                <Slide left>
+                  <Card>
+                    <Title level={3}>Reading List</Title>
+                    <StyledParagraph>See what I've been reading.</StyledParagraph>
+                    <StyledAnchor href={'https://www.notion.so/Reading-List-116054e18e4f423a9ed35d378cc58e09'}>
+                      <StyledImg src={'https://user-images.githubusercontent.com/41667764/103757797-1aff7400-4fc6-11eb-8ade-34ef299baa9b.png'} alt="top-image" />
+                    </StyledAnchor>
+                  </Card>
+                </Slide>
               </Col>
 
               <Col span={12} className="gutter-row">
@@ -198,8 +250,22 @@ const ProfileSummary: FC = () => {
                 <Divider />
                 <Slide right>
                   <Card>
-                    <Title level={3}>Noteworthy</Title>
-                    <Article />
+                    <Title level={3}>Showcase</Title>
+                    <Article content={articleData.guidelyte} />
+                  </Card>
+                </Slide>
+                <Divider />
+                <Slide right>
+                  <Card>
+                    <Title level={3}>1st Place @Sachacks2018</Title>
+                    <Article content={articleData.defhacks} />
+                  </Card>
+                </Slide>
+                <Divider />
+                <Slide right>
+                  <Card>
+                    <Title level={3}>1st Place @DefHacks2019</Title>
+                    <Article content={articleData.sachacks} vertical />
                   </Card>
                 </Slide>
               </Col>
