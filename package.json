@@ -86,7 +86,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "lint": "NODE_ENV=development eslint . --cache --ext .js,.jsx,.ts,.tsx",
