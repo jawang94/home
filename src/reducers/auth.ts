@@ -17,7 +17,7 @@ const initialState = {
   ...(user && { user }),
 };
 
-export default (state = initialState, action) => {
+export default (state = initialState, action: { type: any; token: string }) => {
   switch (action.type) {
     case SIGNUP_REQUEST:
     case LOGIN_REQUEST:

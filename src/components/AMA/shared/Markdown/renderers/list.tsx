@@ -11,7 +11,7 @@ const List = styled.ul`
   line-height: 1.75;
 `;
 
-const listRenderer = (props) => {
+const listRenderer = (props: any) => {
   if (props.ordered) return <List as="ol">{props.children}</List>;
   return <List>{props.children}</List>;
 };

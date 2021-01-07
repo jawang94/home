@@ -22,7 +22,11 @@ class PostList extends React.Component<any, any, any> {
     this.loadPosts();
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(
+    prevProps: { category: any; username: any },
+    _prevState: any,
+    _snapshot: any
+  ) {
     if (
       this.props.category !== prevProps.category ||
       this.props.username !== prevProps.username
@@ -38,7 +42,7 @@ class PostList extends React.Component<any, any, any> {
 
   // eslint-disable-next-line react/no-array-index-key
   mapPosts = () =>
-    this.props.posts.map((post, index) => (
+    this.props.posts.map((post: any, index: any) => (
       // eslint-disable-next-line react/no-array-index-key
       <PostListItem key={index} {...post} />
     ));

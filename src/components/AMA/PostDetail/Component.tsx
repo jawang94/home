@@ -11,7 +11,11 @@ class PostDetail extends React.Component<any, any, any> {
     this.props.fetchPost(this.props.id);
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(
+    prevProps: { post: any },
+    _prevState: any,
+    _snapshot: any
+  ) {
     if (this.props.post !== prevProps.post && this.props.post === null) {
       this.props.history.goBack();
     }

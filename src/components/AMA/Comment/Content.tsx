@@ -6,7 +6,7 @@ const Content = styled.div`
   padding: 12px;
 `;
 
-const CommentContent = ({ children }) => (
+const CommentContent = ({ children }: any) => (
   <Content>
     <Markdown>{children}</Markdown>
   </Content>

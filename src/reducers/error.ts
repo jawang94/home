@@ -11,7 +11,7 @@ import { HIDE_ERROR } from '../actions/error';
 
 const initialState = null;
 
-export default (state = initialState, action) => {
+export default (state = initialState, action: { type: any; error: any }) => {
   switch (action.type) {
     case FETCH_POSTS_ERROR:
     case FETCH_POST_ERROR:

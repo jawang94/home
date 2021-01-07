@@ -10,7 +10,7 @@ import SignupFormContainer from '../SignupForm/Container';
 import CreatePostFormContainer from '../CreatePostForm/Container';
 import Home from '../Home';
 
-const App = ({ dark }) => (
+const App = ({ dark }: any) => (
   <ThemeProvider theme={theme(dark)}>
     <div style={{ width: '990px' }}>
       <GlobalStyle />

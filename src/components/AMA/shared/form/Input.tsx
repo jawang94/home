@@ -4,13 +4,13 @@ import { transition } from '../helpers';
 const Input = styled.input`
   ${transition('border', 'box-shadow')};
 
-  --border: ${(props) =>
+  --border: ${(props: any) =>
     props.error ? props.theme.error : props.theme.accent};
-  --shadow: ${(props) =>
+  --shadow: ${(props: any) =>
     props.error ? `${props.theme.error}4d` : `${props.theme.accent}4d`};
 
   display: block;
-  ${(props) =>
+  ${(props: any) =>
     props.error
       ? `
     border: 1px solid var(--border)

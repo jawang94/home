@@ -6,7 +6,7 @@ import SelectWrapper from './SelectWrapper';
 import Input from './Input';
 import RadioGroup from './RadioGroup';
 
-const VariableField = (field) => {
+const VariableField = (field: any) => {
   switch (field.type) {
     case 'select':
       return (
@@ -66,7 +66,7 @@ const VariableField = (field) => {
   }
 };
 
-const renderField = (field) => {
+const renderField = (field: any) => {
   return <VariableField {...field} />;
 };
 

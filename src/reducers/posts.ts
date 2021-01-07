@@ -24,11 +24,14 @@ import {
 
 const initialState = { isFetching: false, items: [] };
 
-const updateItems = (post, items) =>
-  items.map((i) => (i.id === post.id ? post : i));
+const updateItems = (post: { id: any }, items: any[]) =>
+  items.map((i: { id: any }) => (i.id === post.id ? post : i));
 
 let items;
-export default (state = initialState, action) => {
+export default (
+  state = initialState,
+  action: { type: any; posts: any; post: any; error: any }
+) => {
   switch (action.type) {
     case FETCH_POSTS_REQUEST:
       return { ...state, isFetching: true, post: null, newPost: null };
@@ -54,7 +57,7 @@ export default (state = initialState, action) => {
     case DELETE_POST_REQUEST:
       return { ...state, isDeleting: true };
     case DELETE_POST_SUCCESS:
-      items = state.items.filter((i) => i.id !== action.post);
+      items = state.items.filter((i: any) => i.id !== action.post);
       return { ...state, isDeleting: false, items, post: null };
     case DELETE_POST_ERROR:
       return { ...state, isDeleting: false };

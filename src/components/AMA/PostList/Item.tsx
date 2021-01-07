@@ -8,7 +8,7 @@ const Item = styled.li`
   }
 `;
 
-const PostListItem = (props) => (
+const PostListItem = (props: any) => (
   <Item>
     <Post {...props} />
   </Item>

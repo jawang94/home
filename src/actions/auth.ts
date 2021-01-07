@@ -5,10 +5,12 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 
 const loginRequest = { type: LOGIN_REQUEST };
-const loginSuccess = (token) => ({ type: LOGIN_SUCCESS, token });
-const loginError = (error) => ({ type: LOGIN_ERROR, error });
+const loginSuccess = (token: any) => ({ type: LOGIN_SUCCESS, token });
+const loginError = (error: any) => ({ type: LOGIN_ERROR, error });
 
-export const attemptLogin = (username, password) => async (dispatch) => {
+export const attemptLogin = (username: any, password: any) => async (
+  dispatch: (arg0: { type: string; token?: any; error?: any }) => void
+) => {
   dispatch(loginRequest);
   try {
     const token = await login(username, password);
@@ -23,10 +25,12 @@ export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS';
 export const SIGNUP_ERROR = 'SIGNUP_ERROR';
 
 const signupRequest = { type: SIGNUP_REQUEST };
-const signupSuccess = (token) => ({ type: SIGNUP_SUCCESS, token });
-const signupError = (error) => ({ type: SIGNUP_ERROR, error });
+const signupSuccess = (token: any) => ({ type: SIGNUP_SUCCESS, token });
+const signupError = (error: any) => ({ type: SIGNUP_ERROR, error });
 
-export const attemptSignup = (username, password) => async (dispatch) => {
+export const attemptSignup = (username: any, password: any) => async (
+  dispatch: (arg0: { type: string; token?: any; error?: any }) => void
+) => {
   dispatch(signupRequest);
   try {
     const token = await signup(username, password);

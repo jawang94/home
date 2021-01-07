@@ -23,7 +23,7 @@ class CategoryMenuDropdown extends React.Component<any, any, any> {
       </option>
     ));
 
-  handleOnChange = (event) => {
+  handleOnChange = (event: any) => {
     const newCategory = event.target.value;
     const { category, history } = this.props;
     if (newCategory !== category) {

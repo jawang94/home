@@ -12,7 +12,7 @@ import categories from '../../../categories';
 import withAuth from '../../../utils/withAuth';
 import CreatePostForm from './Component';
 
-const validate = (fields) => {
+const validate = (fields: { title: any; url: any; type: any; text: any }) => {
   const errors: any = {};
   const title = fields.title ? fields.title : '';
   const url = fields.url ? fields.url : '';
@@ -27,7 +27,10 @@ const validate = (fields) => {
   return errors;
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: {
+  posts: { isFetching: any; newPost: any };
+  form: { createPost: any };
+}) => ({
   isFetching: state.posts.isFetching,
   post: state.posts.newPost,
   form: state.form.createPost,
@@ -36,7 +39,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = { attemptCreatePost };
 
 const enhance: any = compose(
-  reduxForm({
+  reduxForm<Record<any, any>>({
     form: 'createPost',
     initialValues: { category: categories[0], type: 'link' },
     validate,

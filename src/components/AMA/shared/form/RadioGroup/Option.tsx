@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { transition, wideFont } from '../../helpers';
 
-const Label = styled.label`
+const Label: any = styled.label`
   ${transition('color', 'background-color')};
   ${wideFont};
 
@@ -11,10 +11,11 @@ const Label = styled.label`
   border: 1px solid ${(props) => props.theme.accent};
   width: 100%;
   padding: 8px;
-  background: ${(props) => (props.active ? props.theme.accent : 'transparent')};
+  background: ${(props: any) =>
+    props.active ? props.theme.accent : 'transparent'};
   cursor: pointer;
   text-align: center;
-  color: ${(props) => (props.active ? '#ffffff' : props.theme.accent)};
+  color: ${(props: any) => (props.active ? '#ffffff' : props.theme.accent)};
   outline: 0;
 
   @media (hover: hover) {
@@ -37,7 +38,7 @@ const Label = styled.label`
   }
 `;
 
-const RadioGroupOption = (props) => (
+const RadioGroupOption = (props: any) => (
   <>
     <input
       type="radio"

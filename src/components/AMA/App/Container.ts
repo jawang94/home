@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import App from './Component';
 
-const mapStateToProps = (state) => ({ dark: state.theme.dark });
+const mapStateToProps = (state: { theme: { dark: any } }) => ({
+  dark: state.theme.dark,
+});
 
 const AppContainer = connect(mapStateToProps)(App);
 

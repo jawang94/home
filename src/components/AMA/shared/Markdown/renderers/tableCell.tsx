@@ -7,18 +7,18 @@ const tableHeader = css`
   font-weight: 600;
 `;
 
-const tableCell = (isHeader) => css`
+const tableCell = (isHeader: boolean) => css`
   ${isHeader && tableHeader};
   border: 1px solid ${(props) => props.theme.border};
   padding: 0 0.75em;
 `;
 
 const TableCell = styled.td`
-  ${(props) => tableCell(props.as === 'th')};
+  ${(props: any) => tableCell(props.as === 'th')};
   line-height: 2;
 `;
 
-const tableCellRenderer = (props) => {
+const tableCellRenderer = (props: { isHeader: any; children: any }) => {
   if (props.isHeader) return <TableCell as="th">{props.children}</TableCell>;
   return <TableCell>{props.children}</TableCell>;
 };

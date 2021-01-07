@@ -16,7 +16,11 @@ const DarkButton = styled.span`
   }
 `;
 
-const HeaderDarkButton = (props) => (
+const HeaderDarkButton = (props: {
+  toggleDarkTheme:
+    | ((event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => void)
+    | undefined;
+}) => (
   <DarkButton onClick={props.toggleDarkTheme}>
     <HeaderDarkButtonIcon />
   </DarkButton>

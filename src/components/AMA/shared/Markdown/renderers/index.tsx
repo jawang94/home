@@ -17,7 +17,7 @@ const renderers = {
   tableCell: tableCellRenderer,
   thematicBreak: thematicBreakRenderer,
   list: listRenderer,
-  html: (props) => <p>{props.value}</p>,
+  html: (props: any) => <p>{props.value}</p>,
 };
 
 export default renderers;

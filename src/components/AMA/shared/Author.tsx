@@ -20,7 +20,7 @@ const Author = ({ username, admin }: { username: string; admin?: boolean }) => (
       display: 'inline-flex',
       alignItems: 'center',
       justifyContent: 'center',
-      margin: admin ? 0 : null,
+      margin: admin ? 0 : undefined,
     }}
   >
     <StyledLink to={`/ama/u/${username}`}>{username}</StyledLink>

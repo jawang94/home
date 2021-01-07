@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro';
 import PostVoteButton from './Button';
 
-const PostVoteUpvote = styled(PostVoteButton)`
-  --iconColor: ${(props) =>
+const PostVoteUpvote: any = styled(PostVoteButton)`
+  --iconColor: ${(props: any) =>
     props.didVote ? props.theme.upvote : props.theme.vote};
 
   ::after {

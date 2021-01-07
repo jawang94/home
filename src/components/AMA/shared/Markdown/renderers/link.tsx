@@ -13,6 +13,6 @@ const Link = styled.a`
   }
 `;
 
-const linkRenderer = (props) => <Link {...props} />;
+const linkRenderer = (props: any) => <Link {...props} />;
 
 export default linkRenderer;

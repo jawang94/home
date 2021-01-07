@@ -31,7 +31,7 @@ const PostVoteButton = styled.button`
     height: 8px;
   }
 
-  ${({ canVote }) =>
+  ${({ canVote }: any) =>
     !canVote &&
     `
     cursor: default;

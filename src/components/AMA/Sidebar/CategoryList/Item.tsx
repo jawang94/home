@@ -16,7 +16,7 @@ const Item = styled(NavLink)`
   }
 `;
 
-const SidebarCategoryListItem = ({ category }) => {
+const SidebarCategoryListItem = ({ category }: any) => {
   const isAll = category === 'all';
   return (
     <Item exact={isAll} to={isAll ? '/ama' : `/ama/a/${category}`}>

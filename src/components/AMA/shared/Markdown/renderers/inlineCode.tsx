@@ -7,6 +7,6 @@ const InlineCode = styled.code`
   background-color: ${(props) => props.theme.pageBackground};
 `;
 
-const inlineCodeRenderer = (props) => <InlineCode {...props} />;
+const inlineCodeRenderer = (props: any) => <InlineCode {...props} />;
 
 export default inlineCodeRenderer;

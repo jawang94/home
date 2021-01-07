@@ -7,7 +7,7 @@ const Timestamp = styled.span`
   color: ${(props) => props.theme.mutedText};
 `;
 
-const CommentDetailTimestamp = ({ created }) => (
+const CommentDetailTimestamp = ({ created }: any) => (
   <Timestamp>{moment(created).fromNow()}</Timestamp>
 );
 

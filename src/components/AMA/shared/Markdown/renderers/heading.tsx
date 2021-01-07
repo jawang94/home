@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { css } from 'styled-components';
 
-const headingSizes = {
+const headingSizes: Record<string, number> = {
   h1: 1.75,
   h2: 1.5,
   h3: 1.25,
@@ -11,7 +11,7 @@ const headingSizes = {
   h6: 0.75,
 };
 
-const headingStyle = (level) => css`
+const headingStyle = (level: string) => css`
   margin-top: 1em;
   margin-bottom: 0.75em;
   line-height: 1;
@@ -19,8 +19,8 @@ const headingStyle = (level) => css`
   font-weight: 500;
 `;
 
-const Heading = styled.span`
-  ${(props) => headingStyle(props.as)};
+const Heading: any = styled.span`
+  ${(props: any) => headingStyle(props.as)};
 
   & + h1,
   & + h2,
@@ -32,7 +32,7 @@ const Heading = styled.span`
   }
 `;
 
-const headingRenderer = (props) => {
+const headingRenderer = (props: any) => {
   const levelString = `h${props.level}`;
   return <Heading as={levelString}>{props.children}</Heading>;
 };

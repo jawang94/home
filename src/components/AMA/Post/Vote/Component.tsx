@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 `;
 
 class PostVote extends React.Component<any, any, any> {
-  static existingVote({ user, votes }) {
+  static existingVote({ user, votes }: any) {
     const existingVote =
       user &&
       votes &&
@@ -39,8 +39,8 @@ class PostVote extends React.Component<any, any, any> {
 
   UNSAFE_componentWillUpdate(
     nextProps: any,
-    nextState: any,
-    nextContext: any
+    _nextState: any,
+    _nextContext: any
   ): any {
     if (this.props.score !== nextProps.score) {
       const didVote = PostVote.existingVote(nextProps);

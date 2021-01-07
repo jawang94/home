@@ -10,7 +10,7 @@ const Wrapper = styled(HeaderNavLink)`
   min-width: 0;
 `;
 
-const HeaderUsername = (props) => (
+const HeaderUsername = (props: any) => (
   <Wrapper to={`/ama/u/${props.username}`}>
     <HeaderUsernameText>{props.username}</HeaderUsernameText>
   </Wrapper>

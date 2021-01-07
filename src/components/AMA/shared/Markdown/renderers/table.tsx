@@ -5,6 +5,6 @@ const Table = styled.table`
   border-collapse: collapse;
 `;
 
-const tableRenderer = (props) => <Table {...props} />;
+const tableRenderer = (props: any) => <Table {...props} />;
 
 export default tableRenderer;

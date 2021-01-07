@@ -15,7 +15,7 @@ const Menu = styled.nav`
   }
 `;
 
-const CategoryMenu = ({ token }) => (
+const CategoryMenu = ({ token }: any) => (
   <Menu>
     <Route
       path="/ama/a/:category"

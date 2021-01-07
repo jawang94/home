@@ -23,7 +23,13 @@ import {
 } from '../actions/auth';
 import { hideErrorClearTimeout, showErrorWithTimeout } from '../actions/error';
 
-export default (store) => (next) => (action) => {
+export default (store: {
+  getState: () => { (): any; new (): any; error: any };
+  dispatch: (arg0: {
+    (dispatch: (arg0: { type: string }) => void): void;
+    (dispatch: (arg0: { type: string; error?: any }) => void): void;
+  }) => void;
+}) => (next: (arg0: any) => void) => (action: { type: any; error: any }) => {
   next(action);
   switch (action.type) {
     case FETCH_POSTS_SUCCESS:

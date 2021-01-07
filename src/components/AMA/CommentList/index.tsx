@@ -8,13 +8,13 @@ const List = styled.ul`
 `;
 
 // eslint-disable-next-line react/no-array-index-key
-const mapComments = (comments) =>
-  comments.map((comment, index) => (
+const mapComments = (comments: any[]) =>
+  comments.map((comment: any, index: any) => (
     // eslint-disable-next-line react/no-array-index-key
     <CommentListItem key={index} {...comment} />
   ));
 
-const sortComments = (comments) =>
+const sortComments = (comments: any[]) =>
   comments.sort(
     (a: any, b: any) => +new Date(b.created) - +new Date(a.created)
   );

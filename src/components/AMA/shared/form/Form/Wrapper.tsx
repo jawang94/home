@@ -1,12 +1,12 @@
 import styled from 'styled-components/macro';
 
-const FormWrapper = styled.div`
+const FormWrapper: any = styled.div`
   position: relative;
   overflow: hidden;
   margin: 0 auto;
   border: 1px solid ${(props) => props.theme.border};
   border-radius: 2px;
-  max-width: ${(props) => (props.wide ? '600px' : '375px')};
+  max-width: ${(props: any) => (props.wide ? '600px' : '375px')};
   padding: 24px;
   background-color: ${(props) => props.theme.foreground};
 
@@ -14,7 +14,7 @@ const FormWrapper = styled.div`
     padding: 16px;
   }
 
-  @media (max-width: ${(props) => (props.wide ? '600px' : '375px')}) {
+  @media (max-width: ${(props: any) => (props.wide ? '600px' : '375px')}) {
     border-radius: 0;
     border-left: none;
     border-right: none;

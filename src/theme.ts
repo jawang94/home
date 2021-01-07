@@ -33,6 +33,6 @@ const light = {
   shadow: 'rgba(0, 0, 0, 0.05)',
 };
 
-const theme = (isDark) => (isDark ? dark : light);
+const theme = (isDark: any) => (isDark ? dark : light);
 
 export default theme;

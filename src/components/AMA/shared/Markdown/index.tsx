@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import breaks from 'remark-breaks';
 import renderers from './renderers';
 
-const StyledReactMarkdown = styled(ReactMarkdown)`
+const StyledReactMarkdown: any = styled(ReactMarkdown)`
   color: ${(props) => props.theme.normalText};
   font-size: 15px;
   line-height: 1.5;
@@ -54,7 +54,7 @@ const allowed = [
   'inlineCode',
 ];
 
-const Markdown = (props) => (
+const Markdown = (props: { children: string | undefined }) => (
   <StyledReactMarkdown
     source={props.children}
     plugins={[breaks]}

@@ -4,7 +4,9 @@ import withAuth from '../../../utils/withAuth';
 import { fetchPost } from '../../../actions/posts';
 import PostDetail from './Component';
 
-export const mapStateToProps = (state) => ({
+export const mapStateToProps = (state: {
+  posts: { isFetching: any; post: any };
+}) => ({
   isFetching: state.posts.isFetching,
   post: state.posts.post,
 });

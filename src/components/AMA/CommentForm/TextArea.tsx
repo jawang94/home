@@ -20,14 +20,14 @@ const TextArea = styled(Input)`
 `;
 
 class CommentFormTextArea extends React.Component<any, any, any> {
-  onKeyDown = (e) => {
+  onKeyDown = (e: { keyCode: number; preventDefault: () => void }) => {
     if (e.keyCode === 13) {
       e.preventDefault();
       this.props.onSubmit();
     }
   };
 
-  renderField = (field) => (
+  renderField = (field: any) => (
     <TextArea
       as="textarea"
       {...field.input}

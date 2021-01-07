@@ -1,4 +1,4 @@
-const categories = [
+const categories: any = [
   'techmentorship',
   'programming',
   'productivity',

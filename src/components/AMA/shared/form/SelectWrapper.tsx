@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro';
 
-const SelectWrapper = styled.div`
+const SelectWrapper: any = styled.div`
   position: relative;
-  ${(props) => props.flex && 'flex: 1'};
+  ${(props: any) => props.flex && 'flex: 1'};
 
   ::after {
     content: '';

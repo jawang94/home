@@ -8,7 +8,7 @@ const Pre = styled.pre`
   overflow-x: scroll;
 `;
 
-const codeRenderer = (props) => (
+const codeRenderer = (props: { value: any }) => (
   <Pre>
     <code>{props.value}</code>
   </Pre>

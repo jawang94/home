@@ -9,11 +9,13 @@ const CategoryList = styled.nav`
   flex-direction: column;
 `;
 
-const mapCategories = (passedCategories) =>
-  passedCategories.map((category, index) => (
-    // eslint-disable-next-line react/no-array-index-key
-    <SidebarCategoryListItem key={index} category={category} />
-  ));
+const mapCategories = (passedCategories: any[]) =>
+  passedCategories.map(
+    (category: any, index: string | number | null | undefined) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <SidebarCategoryListItem key={index} category={category} />
+    )
+  );
 
 const SidebarCategoryList = () => (
   <CategoryList>

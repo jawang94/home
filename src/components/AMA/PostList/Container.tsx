@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 import { fetchPosts, fetchProfile } from '../../../actions/posts';
 import PostList from './Component';
 
-export const mapStateToProps = (state) => ({
+export const mapStateToProps = (state: {
+  posts: { items: any; isFetching: any };
+}) => ({
   posts: state.posts.items,
   isFetching: state.posts.isFetching,
 });

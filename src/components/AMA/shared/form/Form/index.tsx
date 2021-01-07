@@ -11,7 +11,7 @@ const StyledForm = styled.form`
   flex-direction: column;
   align-items: flex-start;
 
-  ${(props) =>
+  ${(props: any) =>
     props.loading &&
     'filter: grayscale(0.5) blur(5px) opacity(0.6); pointer-events: none'};
 `;

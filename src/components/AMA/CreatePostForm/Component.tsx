@@ -17,21 +17,23 @@ const postTypes = [
 ];
 
 class CreatePostForm extends React.Component<any, any, any> {
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(_prevProps: any, _prevState: any, _snapshot: any) {
     const { token, post, history } = this.props;
     if (!token) history.push('/ama/');
     if (post) history.push(`/ama/a/${post.category}/${post.id}`);
   }
 
-  onSubmit = (post) => this.props.attemptCreatePost(post);
+  onSubmit = (post: any) => this.props.attemptCreatePost(post);
 
   mapCategories = () =>
-    categories.map((category, index) => (
-      // eslint-disable-next-line react/no-array-index-key
-      <option key={index} value={category}>
-        {category}
-      </option>
-    ));
+    categories.map(
+      (category: any, index: string | number | null | undefined) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <option key={index} value={category}>
+          {category}
+        </option>
+      )
+    );
 
   render() {
     return (

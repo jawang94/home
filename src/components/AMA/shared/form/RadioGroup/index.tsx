@@ -12,24 +12,31 @@ const RadioGroupWrapper = styled.div`
   }
 `;
 
-function handleClick(e, value, fn) {
+function handleClick(
+  e: { preventDefault: () => void },
+  value: any,
+  fn: (arg0: any) => void
+) {
   e.preventDefault();
   fn(value);
 }
 
-const renderOptions = (field) => {
-  return field.options.map((option, key) => (
+const renderOptions = (field: {
+  options: any[];
+  input: { value: any; onChange: any };
+}) => {
+  return field.options.map((option: { value: any }, key: any) => (
     <RadioGroupOption
       {...option}
       active={field.input.value === option.value}
-      onClick={(e) => handleClick(e, option.value, field.input.onChange)}
+      onClick={(e: any) => handleClick(e, option.value, field.input.onChange)}
       // eslint-disable-next-line react/no-array-index-key
       key={key}
     />
   ));
 };
 
-const RadioGroup = ({ field }) => (
+const RadioGroup = ({ field }: any) => (
   <RadioGroupWrapper>{renderOptions(field)}</RadioGroupWrapper>
 );
 

@@ -5,7 +5,7 @@ import withAuth from '../../../utils/withAuth';
 import { attemptLogin } from '../../../actions/auth';
 import LoginForm from './Component';
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: { auth: { loading: any } }) => ({
   loading: state.auth.loading,
 });
 

@@ -1,17 +1,21 @@
 export const SHOW_ERROR = 'SHOW_ERROR';
-const showError = (error) => ({ type: SHOW_ERROR, error });
+const showError = (error: any) => ({ type: SHOW_ERROR, error });
 
 export const HIDE_ERROR = 'HIDE_ERROR';
 const hideError = () => ({ type: HIDE_ERROR });
 
-let timeout;
-export const showErrorWithTimeout = (error) => (dispatch) => {
+let timeout: any;
+export const showErrorWithTimeout = (error: any) => (
+  dispatch: (arg0: { type: string; error?: any }) => void
+) => {
   dispatch(showError(error));
   clearTimeout(timeout);
   timeout = setTimeout(() => dispatch(hideError()), 5000);
 };
 
-export const hideErrorClearTimeout = () => (dispatch) => {
+export const hideErrorClearTimeout = () => (
+  dispatch: (arg0: { type: string }) => void
+) => {
   dispatch(hideError());
   clearTimeout(timeout);
 };

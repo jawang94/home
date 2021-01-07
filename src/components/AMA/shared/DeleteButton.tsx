@@ -14,6 +14,10 @@ const Button = styled.button`
   margin-left: auto;
 `;
 
-const DeleteButton = (props) => <Button onClick={props.onClick}>delete</Button>;
+const DeleteButton = (props: {
+  onClick:
+    | ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
+    | undefined;
+}) => <Button onClick={props.onClick}>delete</Button>;
 
 export default DeleteButton;

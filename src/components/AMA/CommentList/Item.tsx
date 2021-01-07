@@ -6,7 +6,7 @@ const Item = styled.li`
   margin-bottom: 8px;
 `;
 
-const CommentListItem = (props) => (
+const CommentListItem = (props: any) => (
   <Item>
     <Comment {...props} />
   </Item>

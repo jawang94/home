@@ -13,11 +13,11 @@ class SignupForm extends React.Component<any, any, any> {
     this.redirectIfLoggedIn();
   }
 
-  componentDidUpdate(prevProps, prevState, snapshot) {
+  componentDidUpdate(_prevProps: any, _prevState: any, _snapshot: any) {
     this.redirectIfLoggedIn();
   }
 
-  onSubmit = ({ username, password }) => {
+  onSubmit = ({ username, password }: any) => {
     this.props.attemptSignup(username, password);
   };
 

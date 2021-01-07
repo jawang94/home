@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const PostDetailPost = (props) => (
+const PostDetailPost = (props: any) => (
   <Wrapper>
     <Post {...props} full />
   </Wrapper>

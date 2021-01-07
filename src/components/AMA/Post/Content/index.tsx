@@ -17,17 +17,22 @@ const Wrapper = styled.div`
 
 // eslint-disable-next-line consistent-return
 const renderContent = ({ type, url, showFullPost, text }: any) => {
+  let result;
   switch (type) {
     case 'link':
-      return <PostContentPreview>{url}</PostContentPreview>;
+      result = <PostContentPreview>{url}</PostContentPreview>;
+      break;
     case 'text':
       if (showFullPost) {
-        return <PostContentFullText>{text}</PostContentFullText>;
+        result = <PostContentFullText>{text}</PostContentFullText>;
+        break;
       }
-      return <PostContentPreview>{text}</PostContentPreview>;
+      result = <PostContentPreview>{text}</PostContentPreview>;
+      break;
     default:
       break;
   }
+  return result;
 };
 
 const PostContent = (props: any) => {

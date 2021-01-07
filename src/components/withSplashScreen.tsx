@@ -15,9 +15,9 @@ function LoadingMessage() {
   );
 }
 
-function withSplashScreen(WrappedComponent) {
+function withSplashScreen(WrappedComponent: any) {
   return class extends Component<any, any, any> {
-    constructor(props) {
+    constructor(props: any) {
       super(props);
       this.state = {
         loading: true,
