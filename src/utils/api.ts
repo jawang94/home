@@ -1,7 +1,7 @@
 const baseUrl =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:8080/api'
-    : `process.env.DATABASE_ENDPOINT`;
+    : `${process.env.DATABASE_ENDPOINT}/api`;
 
 const methods = {
   async get(endpoint: string, token?: any) {

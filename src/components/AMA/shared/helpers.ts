@@ -47,11 +47,11 @@ export const link = (props: any) => css`
 
   text-underline-position: under;
   text-decoration: none;
-  color: ${(styleProps) => styleProps.theme.normalText};
+  color: ${(styleProps: any) => styleProps.theme.normalText};
 
   :hover {
     ${props.underline && 'text-decoration: underline'};
-    color: ${(styleProps) => styleProps.theme.accent};
+    color: ${(styleProps: any) => styleProps.theme.accent};
   }
 `;
 
