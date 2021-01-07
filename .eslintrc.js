@@ -36,7 +36,6 @@ module.exports = {
       'error',
       {
         endOfLine: 'auto',
-        indent: 2,
         tabWidth: 2,
         singleQuote: true,
       },

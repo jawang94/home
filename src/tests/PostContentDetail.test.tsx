@@ -10,7 +10,7 @@ it('renders without crashing', () => {
 
 it('renders the information correctly', () => {
   const data = {
-    author: { username: 'author' },
+    author: { username: 'author', admin: false },
     category: 'category',
     created: '2018-11-05T05:02:38.544Z',
     commentCount: 0,

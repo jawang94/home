@@ -25,14 +25,17 @@ const Wrapper = styled.div`
   }
 `;
 
-const PostContentDetail = (props) => (
+const PostContentDetail = (props: any) => (
   <Wrapper>
     <Link to={`/ama/a/${props.category}/${props.id}`}>
       {props.commentCount} comment{props.commentCount !== 1 ? 's' : null}
     </Link>
     <Link to={`/ama/a/${props.category}`}>/a/{props.category}</Link>
     <span>by</span>
-    <Author username={props.author && props.author.username} />
+    <Author
+      username={props.author && props.author.username}
+      admin={props.author?.admin}
+    />
     <span>{moment(props.created).fromNow()}</span>
   </Wrapper>
 );

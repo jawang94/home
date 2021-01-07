@@ -10,6 +10,7 @@ const Wrapper = styled.div`
   border-bottom: 1px solid ${(props) => props.theme.border};
   padding: 8px;
   font-size: 13px;
+  align-items: center;
 `;
 
 class CommentDetail extends React.Component<any, any, any> {
@@ -18,7 +19,10 @@ class CommentDetail extends React.Component<any, any, any> {
   render() {
     return (
       <Wrapper>
-        <Author username={this.props.author && this.props.author.username} />
+        <Author
+          username={this.props.author && this.props.author.username}
+          admin={this.props.author?.admin}
+        />
         <CommentDetailTimestamp created={this.props.created} />
         {this.props.token &&
           (this.props.user.id === this.props.author.id ||
