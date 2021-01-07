@@ -1,7 +1,7 @@
 const baseUrl =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:8080/api'
-    : `https://jawang94-personal-site-server.herokuapp.com/api`;
+    : `process.env.DATABASE_ENDPOINT`;
 
 const methods = {
   async get(endpoint, token = null) {
