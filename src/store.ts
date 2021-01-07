@@ -9,7 +9,9 @@ import authMiddleware from './middleware/auth';
 import errorMiddleware from './middleware/error';
 import themeMiddleware from './middleware/theme';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const anyTypedWindow: any = window;
+const composeEnhancers =
+  anyTypedWindow.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default createStore(
   combineReducers({ form, error, auth, posts, theme }),

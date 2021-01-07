@@ -13,9 +13,7 @@ export const showErrorWithTimeout = (error: any) => (
   timeout = setTimeout(() => dispatch(hideError()), 5000);
 };
 
-export const hideErrorClearTimeout = () => (
-  dispatch: (arg0: { type: string }) => void
-) => {
+export const hideErrorClearTimeout = () => (dispatch: any) => {
   dispatch(hideError());
   clearTimeout(timeout);
 };

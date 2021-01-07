@@ -5,7 +5,7 @@ import { hideErrorClearTimeout } from '../actions/error';
 const history = createBrowserHistory();
 
 history.listen(() => {
-  if (store.getState().error) store.dispatch(hideErrorClearTimeout());
+  if (store.getState().error) store.dispatch<any>(hideErrorClearTimeout());
 });
 
 export default history;
