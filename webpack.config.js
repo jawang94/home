@@ -23,12 +23,6 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'awesome-typescript-loader',
       },
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'source-map-loader',
-      },
       // Extract all .global.css to style.css as is
       {
         test: /\.global\.css$/,
