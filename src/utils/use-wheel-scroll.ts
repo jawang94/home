@@ -1,8 +1,8 @@
-import { RefObject } from "react";
-import { useDomEvent, MotionValue } from "framer-motion";
-import { spring } from "popmotion";
-import { mix } from "@popmotion/popcorn";
-import { debounce } from "lodash";
+import { RefObject } from 'react';
+import { useDomEvent, MotionValue } from 'framer-motion';
+import { spring } from 'popmotion';
+import { mix } from '@popmotion/popcorn';
+import { debounce } from 'lodash';
 
 interface Constraints {
   top: number;
@@ -25,10 +25,10 @@ function springTo(value: MotionValue, from: number, to: number) {
       to,
       velocity: value.getVelocity(),
       stiffness: 400,
-      damping: 40
+      damping: 40,
     }).start({
       update: (v: number) => value.set(v),
-      complete
+      complete,
     });
 
     return () => animation.stop();
@@ -60,7 +60,7 @@ const debouncedSpringTo = debounce(springTo, 100);
  * @param constraints - top/bottom scroll constraints in pixels.
  * @param isActive - `true` if this listener should fire.
  */
-export function useWheelScroll(
+export default function useWheelScroll(
   ref: RefObject<Element>,
   y: MotionValue<number>,
   constraints: Constraints | null,
@@ -108,5 +108,5 @@ export function useWheelScroll(
     onWheelCallback(event);
   };
 
-  useDomEvent(ref, "wheel", isActive ? onWheel : undefined, { passive: false });
+  useDomEvent(ref, 'wheel', isActive ? onWheel : undefined, { passive: false });
 }

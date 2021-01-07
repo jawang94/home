@@ -1,12 +1,12 @@
-import * as React from "react";
-import { motion, useInvertedScale } from "framer-motion";
-import { closeSpring } from "./animations";
+import * as React from 'react';
+import { motion, useInvertedScale } from 'framer-motion';
+import { closeSpring } from './animations';
 
-export const Image = ({
+const Image = ({
   id,
   isSelected,
   pointOfInterest = 0,
-  backgroundColor
+  backgroundColor,
 }: any) => {
   const inverted = useInvertedScale();
 
@@ -28,3 +28,5 @@ export const Image = ({
     </motion.div>
   );
 };
+
+export default Image;

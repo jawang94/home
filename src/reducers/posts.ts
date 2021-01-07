@@ -19,13 +19,13 @@ import {
   DELETE_COMMENT_ERROR,
   VOTE_REQUEST,
   VOTE_SUCCESS,
-  VOTE_ERROR
+  VOTE_ERROR,
 } from '../actions/posts';
 
 const initialState = { isFetching: false, items: [] };
 
 const updateItems = (post, items) =>
-  items.map(i => (i.id === post.id ? post : i));
+  items.map((i) => (i.id === post.id ? post : i));
 
 let items;
 export default (state = initialState, action) => {
@@ -54,7 +54,7 @@ export default (state = initialState, action) => {
     case DELETE_POST_REQUEST:
       return { ...state, isDeleting: true };
     case DELETE_POST_SUCCESS:
-      items = state.items.filter(i => i.id !== action.post);
+      items = state.items.filter((i) => i.id !== action.post);
       return { ...state, isDeleting: false, items, post: null };
     case DELETE_POST_ERROR:
       return { ...state, isDeleting: false };
@@ -81,7 +81,7 @@ export default (state = initialState, action) => {
         ...state,
         isVoting: false,
         items,
-        post: action.post
+        post: action.post,
       };
     case VOTE_ERROR:
       return { ...state, isVoting: false };

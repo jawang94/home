@@ -9,5 +9,5 @@ export default formReducer.plugin({
       default:
         return state;
     }
-  }
+  },
 });

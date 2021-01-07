@@ -1,30 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './splash-screen.css';
 import Typical from 'react-typical';
-import { PageTransition } from '@steveeeie/react-page-transition';
 
 function LoadingMessage() {
-  const steps = [
-    'Welcome 👋', 1000,
-  ];
+  const steps = ['Welcome 👋', 1000];
 
   return (
-      <PageTransition
-      preset="moveToLeftFromRight"
-      >
-      <div className="splash-screen">
-        <div>
-          <Typical
-            steps={steps}
-            loop={1}
-            wrapper="h1"
-            className="typical-text"
-          />
-        </div>
-        <div className="loading-dot">.</div>
+    <div className="splash-screen">
+      <div>
+        <Typical steps={steps} loop={1} wrapper="h1" className="typical-text" />
       </div>
-    </PageTransition>
-
+      <div className="loading-dot">.</div>
+    </div>
   );
 }
 
@@ -43,7 +30,7 @@ function withSplashScreen(WrappedComponent) {
           this.setState({
             loading: false,
           });
-        }, 1500)
+        }, 1500);
       } catch (err) {
         console.log(err);
         this.setState({
@@ -53,8 +40,9 @@ function withSplashScreen(WrappedComponent) {
     }
 
     render() {
+      const { loading } = this.state;
       // while checking user session, show "loading" message
-      if (this.state.loading) return LoadingMessage();
+      if (loading) return LoadingMessage();
 
       // otherwise, show the desired route
       return <WrappedComponent {...this.props} />;

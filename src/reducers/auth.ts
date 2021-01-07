@@ -6,7 +6,7 @@ import {
   SIGNUP_REQUEST,
   SIGNUP_SUCCESS,
   SIGNUP_ERROR,
-  LOGOUT
+  LOGOUT,
 } from '../actions/auth';
 
 const token = localStorage.getItem('token');
@@ -14,7 +14,7 @@ const user = token && jwtDecode<any>(token).user;
 
 const initialState = {
   ...(token && { token }),
-  ...(user && { user })
+  ...(user && { user }),
 };
 
 export default (state = initialState, action) => {
@@ -23,14 +23,15 @@ export default (state = initialState, action) => {
     case LOGIN_REQUEST:
       return { ...state, loading: true };
     case SIGNUP_SUCCESS:
-    case LOGIN_SUCCESS:
-      const user = jwtDecode<any>(action.token).user;
+    case LOGIN_SUCCESS: {
+      const { user: loggedInUser } = jwtDecode<any>(action.token);
       return {
         ...state,
         loading: false,
         token: action.token,
-        user
+        user: loggedInUser,
       };
+    }
 
     case SIGNUP_ERROR:
     case LOGIN_ERROR:

@@ -1,5 +1,5 @@
-import { useMotionValue, useInvertedScale } from "framer-motion";
-import { useEffect } from "react";
+import { useMotionValue, useInvertedScale } from 'framer-motion';
+import { useEffect } from 'react';
 
 /**
  * Avoid the stretch/squashing of border radius by using inverting them
@@ -14,7 +14,7 @@ import { useEffect } from "react";
  *
  * @param radius
  */
-export function useInvertedBorderRadius(radius: number) {
+export default function useInvertedBorderRadius(radius: number) {
   const scaleX = useMotionValue(1);
   const scaleY = useMotionValue(1);
   const inverted = useInvertedScale({ scaleX, scaleY });
@@ -24,8 +24,8 @@ export function useInvertedBorderRadius(radius: number) {
     function updateRadius() {
       const latestX = inverted.scaleX.get();
       const latestY = inverted.scaleY.get();
-      const xRadius = latestX * radius + "px";
-      const yRadius = latestY * radius + "px";
+      const xRadius = `${latestX * radius}px`;
+      const yRadius = `${latestY * radius}px`;
 
       borderRadius.set(`${xRadius} ${yRadius}`);
     }
@@ -37,7 +37,7 @@ export function useInvertedBorderRadius(radius: number) {
       unsubScaleX();
       unsubScaleY();
     };
-  }, [radius]);
+  }, [borderRadius, inverted.scaleX, inverted.scaleY, radius]);
 
   return {
     scaleX,
@@ -45,6 +45,6 @@ export function useInvertedBorderRadius(radius: number) {
     borderTopLeftRadius: borderRadius,
     borderTopRightRadius: borderRadius,
     borderBottomLeftRadius: borderRadius,
-    borderBottomRightRadius: borderRadius
+    borderBottomRightRadius: borderRadius,
   };
 }

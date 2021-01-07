@@ -1,6 +1,6 @@
 {
   "name": "jawang94.github.io",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@ant-design/aliyun-theme": "^0.0.4",
@@ -13,9 +13,13 @@
     "@types/lodash": "^4.14.165",
     "antd": "^4.9.2",
     "craco-less": "^1.17.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "framer-motion": "1.6.0",
+    "history": "^5.0.0",
     "jwt-decode": "^3.1.2",
     "lodash": "^4.17.20",
+    "moment": "^2.29.1",
     "popmotion": "9.0.0-beta-8",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -42,8 +46,19 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.6",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "eslint": "7.11.0",
+    "eslint-config-airbnb": "18.2.1",
+    "eslint-config-airbnb-typescript": "^12.0.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "4.0.0",
+    "prettier": "^2.2.1",
     "redux-mock-store": "^1.5.4",
     "typescript": "^4.1.3"
   },
@@ -51,7 +66,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "NODE_ENV=development eslint . --cache --ext .js,.jsx,.ts,.tsx",
+    "lint-fix": "yarn --silent lint --fix; exit 0"
   },
   "eslintConfig": {
     "extends": [

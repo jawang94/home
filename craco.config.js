@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const CracoLessPlugin = require('craco-less');
 
 module.exports = {
@@ -7,7 +8,7 @@ module.exports = {
       options: {
         lessLoaderOptions: {
           lessOptions: {
-            modifyVars: { },
+            modifyVars: {},
             javascriptEnabled: true,
           },
         },

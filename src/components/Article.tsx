@@ -13,14 +13,14 @@ const StyledArticle = styled.article`
   box-shadow: var(--color-shadow-small) !important;
   border-radius: 4px !important;
   border: 1px solid var(--color-border-primary)) !important;
-`
+`;
 
 const StyledAnchor = styled.a`
   display: block !important;
   border-bottom: 1px solid var(--color-border-primary) !important;
   color: var(--color-text-link);
   text-decoration: none;
-`
+`;
 
 const StyledImg = styled.img`
   display: block !important;
@@ -29,26 +29,26 @@ const StyledImg = styled.img`
   max-width: ${(props: any) => props.theme.maxWidth} !important;
   max-height: 100% !important;
   border-style: none !important;
-`
+`;
 
 const StyledContentDiv = styled.div`
   padding: 16px !important;
-`
+`;
 
 const StyledSubHeadingDiv = styled.div`
   margin-bottom: 16px !important;
   font-size 12px !important;
   color: var(--color-text-secondary) !important;
-`
+`;
 
 const StyledBodyDiv = styled.div`
   display: flex !important;
-`
+`;
 
 const StyledBodyLeftDiv = styled.div`
   margin-left: 8px !important;
   margin-right: 24px !important;
-`
+`;
 
 const StyledBodyLeftAnchor = styled.a`
   background-color: #ffffff;
@@ -60,17 +60,17 @@ const StyledBodyLeftAnchor = styled.a`
   height: 56px;
   width: 56px;
   box-shadow: var(--color-shadow-medium);
-`
+`;
 
 const StyledBodyLeftImg = styled.img`
-  max-width: 60%!important;
-  height: auto!important;
-  max-height: 55%!important;
-`
+  max-width: 60% !important;
+  height: auto !important;
+  max-height: 55% !important;
+`;
 
 const StyledBodyRightDiv = styled.div`
   flex: auto;
-`
+`;
 
 const StyledBodyRightH1 = styled.h1`
   margin-bottom: 8px;
@@ -79,7 +79,7 @@ const StyledBodyRightH1 = styled.h1`
   font-size 24px;
   font-weight: 300;
   color: var(--color-text-primary) !important;
-`
+`;
 
 const StyledBodyRightAnchor = styled.a`
   color: var(--color-text-link) !important;
@@ -91,36 +91,48 @@ const StyledBodyRightAnchor = styled.a`
   &:hover {
     text-decoration: underline;
   }
-`
+`;
 
 const StyledBodyRightMarkdownDiv = styled.div`
   margin-bottom: 8px !important;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
   color: var(--color-text-secondary) !important;
-`
+`;
 
 interface Props {
   content: ArticleDataShape;
   vertical?: boolean;
 }
 
-export const Article: FC<Props> = props => {
+const Article: FC<Props> = (props) => {
   const [isOpen, toggleIsOpen] = useState(false);
-  const { topImage, topSubHeading, leftAnchor, leftImage, rightAnchor,rightHeaderText, rightBodyText } = props.content;
+  const { content, vertical } = props;
+  const {
+    topImage,
+    topSubHeading,
+    leftAnchor,
+    leftImage,
+    rightAnchor,
+    rightHeaderText,
+    rightBodyText,
+  } = content;
 
   return (
     <StyledArticle>
       <StyledAnchor onClick={() => toggleIsOpen(true)}>
-        <StyledImg src={topImage} alt="top-image" theme={{ maxWidth: props.vertical ? "50%" : "100%" }}/>
+        <StyledImg
+          src={topImage}
+          alt="top-image"
+          theme={{ maxWidth: vertical ? '50%' : '100%' }}
+        />
       </StyledAnchor>
       <StyledContentDiv>
-        <StyledSubHeadingDiv>
-          {topSubHeading}
-        </StyledSubHeadingDiv>
-        
+        <StyledSubHeadingDiv>{topSubHeading}</StyledSubHeadingDiv>
+
         <StyledBodyDiv>
           <StyledBodyLeftDiv>
             <StyledBodyLeftAnchor href={leftAnchor}>
@@ -130,7 +142,9 @@ export const Article: FC<Props> = props => {
 
           <StyledBodyRightDiv>
             <StyledBodyRightH1>
-            <StyledBodyRightAnchor href={rightAnchor}>{rightHeaderText}</StyledBodyRightAnchor>
+              <StyledBodyRightAnchor href={rightAnchor}>
+                {rightHeaderText}
+              </StyledBodyRightAnchor>
             </StyledBodyRightH1>
 
             <StyledBodyRightMarkdownDiv>
@@ -148,5 +162,7 @@ export const Article: FC<Props> = props => {
         />
       )}
     </StyledArticle>
-  )
-}
+  );
+};
+
+export default Article;

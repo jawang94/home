@@ -4,12 +4,12 @@ const baseUrl =
     : `https://jawang94-personal-site-server.herokuapp.com/api`;
 
 const methods = {
-  get: async function (endpoint, token = null) {
+  async get(endpoint, token = null) {
     const options = {
       method: 'GET',
       headers: {
-        ...(token && { Authorization: `Bearer ${token}` })
-      }
+        ...(token && { Authorization: `Bearer ${token}` }),
+      },
     };
 
     const response = await fetch(`${baseUrl}/${endpoint}`, options);
@@ -20,14 +20,14 @@ const methods = {
     return json;
   },
 
-  post: async function (endpoint, body, token = null) {
+  async post(endpoint, body, token = null) {
     const options = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...(token && { Authorization: `Bearer ${token}` })
+        ...(token && { Authorization: `Bearer ${token}` }),
       },
-      body: JSON.stringify(body)
+      body: JSON.stringify(body),
     };
 
     const response = await fetch(`${baseUrl}/${endpoint}`, options);
@@ -35,7 +35,7 @@ const methods = {
 
     if (!response.ok) {
       if (response.status === 422) {
-        json.errors.forEach(error => {
+        json.errors.forEach((error) => {
           throw Error(`${error.param} ${error.msg}`);
         });
       }
@@ -46,13 +46,13 @@ const methods = {
     return json;
   },
 
-  delete: async function (endpoint, token = null) {
+  async delete(endpoint, token = null) {
     const options = {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        ...(token && { Authorization: `Bearer ${token}` })
-      }
+        ...(token && { Authorization: `Bearer ${token}` }),
+      },
     };
 
     const response = await fetch(`${baseUrl}/${endpoint}`, options);
@@ -64,55 +64,63 @@ const methods = {
     }
 
     return json;
-  }
+  },
 };
 
-export async function login (username, password) {
+export async function login(username, password) {
   const json = await methods.post('login', { username, password });
   return json.token;
 }
 
-export async function signup (username, password) {
+export async function signup(username, password) {
   const json = await methods.post('register', { username, password });
   return json.token;
 }
 
-export async function getPosts (category) {
-  return await methods.get(`posts/${category}`);
+export async function getPosts(category) {
+  const response = await methods.get(`posts/${category}`);
+  return response;
 }
 
-export async function getProfile (username) {
-  return await methods.get(`user/${username}`);
+export async function getProfile(username) {
+  const response = methods.get(`user/${username}`);
+  return response;
 }
 
-export async function getPost (id) {
-  return await methods.get(`post/${id}`);
+export async function getPost(id) {
+  const response = methods.get(`post/${id}`);
+  return response;
 }
 
-export async function createPost (body, token) {
-  return await methods.post('posts', body, token);
+export async function createPost(body, token) {
+  const response = methods.post('posts', body, token);
+  return response;
 }
 
-export async function deletePost (id, token) {
-  return await methods.delete(`post/${id}`, token);
+export async function deletePost(id, token) {
+  const response = methods.delete(`post/${id}`, token);
+  return response;
 }
 
-export async function createComment (post, comment, token) {
-  return await methods.post(`post/${post}`, comment, token);
+export async function createComment(post, comment, token) {
+  const response = methods.post(`post/${post}`, comment, token);
+  return response;
 }
 
-export async function deleteComment (post, comment, token) {
-  return await methods.delete(`post/${post}/${comment}`, token);
+export async function deleteComment(post, comment, token) {
+  const response = methods.delete(`post/${post}/${comment}`, token);
+  return response;
 }
 
-export async function castVote (id, vote, token) {
+export async function castVote(id, vote, token) {
   const voteTypes = {
     '1': 'upvote',
     '0': 'unvote',
-    '-1': 'downvote'
+    '-1': 'downvote',
   };
 
   const voteType = voteTypes[vote];
 
-  return await methods.get(`post/${id}/${voteType}`, token);
+  const response = await methods.get(`post/${id}/${voteType}`, token);
+  return response;
 }

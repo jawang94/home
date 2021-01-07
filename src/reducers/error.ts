@@ -4,7 +4,7 @@ import {
   CREATE_POST_ERROR,
   DELETE_POST_ERROR,
   CREATE_COMMENT_ERROR,
-  VOTE_ERROR
+  VOTE_ERROR,
 } from '../actions/posts';
 import { LOGIN_ERROR, SIGNUP_ERROR } from '../actions/auth';
 import { HIDE_ERROR } from '../actions/error';
