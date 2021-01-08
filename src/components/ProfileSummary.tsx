@@ -82,7 +82,8 @@ const URL_CONSTANTS: Record<string, string> = {
   email: 'mailto:wang.jason.010@gmail.com',
   github: 'https://github.com/jawang94',
   linkedin: 'https://www.linkedin.com/in/jasonwang94/',
-  resume: 'https://jasonw.tech/rsc/CurrentResume.pdf',
+  resume:
+    'https://drive.google.com/file/d/1J5_BT40cf3XRIM3yLGePMsLc5FNpsIS5/view?usp=sharing',
 };
 
 const buttonClicked = (redirectTo: string) => {
