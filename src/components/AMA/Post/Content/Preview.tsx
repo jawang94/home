@@ -9,6 +9,11 @@ const PostContentPreview = styled.div`
   font-size: 13px;
   line-height: 19px;
   color: ${(props) => props.theme.mutedText};
+
+  @media only screen and (max-width: 768px) {
+    max-width: 200px;
+    text-align: left;
+  }
 `;
 
 export default PostContentPreview;

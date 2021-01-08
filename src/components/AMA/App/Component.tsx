@@ -18,7 +18,7 @@ const App = ({ dark }: any) => {
     <ThemeProvider theme={theme(dark)}>
       <div
         style={{
-          maxWidth: '990px',
+          maxWidth: isTabletOrMobile ? '100%' : '990px',
           width: isTabletOrMobile ? 'auto' : '990px',
           minHeight: '50vh',
         }}
