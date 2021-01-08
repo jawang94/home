@@ -158,7 +158,7 @@ const ProfileSummary: FC = () => {
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
               {isTabletOrMobile ? (
                 <>
-                  <Col span={24} className="gutter-row">
+                  <Col span={24}>
                     <Slide left>
                       <Card>
                         <StyledTitle level={3}>Hello</StyledTitle>
@@ -244,7 +244,6 @@ const ProfileSummary: FC = () => {
                 </>
               ) : (
                 <>
-                  {' '}
                   <Col span={12} className="gutter-row">
                     <Slide left>
                       <Card>
