@@ -2,9 +2,9 @@ import { Menu } from 'antd';
 import React, { FC, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import {
-  QuestionCircleFilled,
-  TrophyFilled,
-  HomeFilled,
+  QuestionCircleOutlined,
+  TrophyOutlined,
+  HomeOutlined,
 } from '@ant-design/icons';
 import styled from 'styled-components';
 
@@ -43,7 +43,7 @@ const NavMenu: FC = () => {
     >
       <StyledMenuItem
         key="aboutme"
-        icon={<HomeFilled style={{ fontSize: '16px' }} />}
+        icon={<HomeOutlined style={{ fontSize: '16px' }} />}
       >
         <span
           style={{
@@ -58,7 +58,7 @@ const NavMenu: FC = () => {
       </StyledMenuItem>
       <StyledMenuItem
         key="ama"
-        icon={<QuestionCircleFilled style={{ fontSize: '16px' }} />}
+        icon={<QuestionCircleOutlined style={{ fontSize: '16px' }} />}
       >
         <span
           style={{
@@ -74,7 +74,7 @@ const NavMenu: FC = () => {
       <StyledMenuItem
         disabled
         key="projects"
-        icon={<TrophyFilled style={{ fontSize: '16px' }} />}
+        icon={<TrophyOutlined style={{ fontSize: '16px' }} />}
       >
         <span
           style={{

@@ -12,7 +12,7 @@ import Home from '../Home';
 
 const App = ({ dark }: any) => (
   <ThemeProvider theme={theme(dark)}>
-    <div style={{ width: '990px' }}>
+    <div style={{ maxWidth: '990px' }}>
       <GlobalStyle />
       <Route component={HeaderContainer} />
       <Route component={ErrorNotificationContainer} />

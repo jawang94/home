@@ -9,6 +9,7 @@ import {
   Typography,
 } from 'antd';
 import React, { FC } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { Fade, Slide } from 'react-reveal';
 import styled from 'styled-components';
 
@@ -128,11 +129,14 @@ const extraButtons = (
 );
 
 const ProfileSummary: FC = () => {
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  const isDefinitelyMobile = useMediaQuery({ query: '(max-width: 736px)' });
+
   return (
     <PageHeader
       title="Jason Wang"
       className="site-page-header"
-      subTitle="Seattle, WA"
+      subTitle={isDefinitelyMobile ? null : 'Seattle, WA'}
       tags={
         <Tag style={{ fontSize: '14px', lineHeight: '20px' }} color="green">
           Open To Opportunities
@@ -151,87 +155,181 @@ const ProfileSummary: FC = () => {
         <Content>
           <Fade bottom>
             <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-              <Col span={12} className="gutter-row">
-                <Slide left>
-                  <Card>
-                    <StyledTitle level={3}>Hello</StyledTitle>
-                    <Biography />
-                  </Card>
-                </Slide>
-                <Divider />
-                <Slide left>
-                  <Card>
-                    <StyledTitle level={3}>Speak With Me</StyledTitle>
-                    <Calendly />
-                  </Card>
-                </Slide>
-                <Divider />
-                <Slide left>
-                  <Card>
-                    <StyledTitle level={3}>Favorite Quotes</StyledTitle>
-                    <QuoteList />
-                  </Card>
-                </Slide>
-                <Divider />
-                <Slide left>
-                  <Card>
-                    <StyledTitle level={3}>Food App</StyledTitle>
-                    <Article content={articleData.munchwheel} />
-                  </Card>
-                </Slide>
-                <Divider />
-                <Slide left>
-                  <Card>
-                    <StyledTitle level={3}>Chat App</StyledTitle>
-                    <Article content={articleData.blast} />
-                  </Card>
-                </Slide>
-                <Divider />
-                <Slide left>
-                  <Card>
-                    <StyledTitle level={3}>Reading List</StyledTitle>
-                    <StyledParagraph>
-                      See what I&apos;ve been reading.
-                    </StyledParagraph>
-                    <StyledAnchor href="https://www.notion.so/Reading-List-116054e18e4f423a9ed35d378cc58e09">
-                      <StyledImg
-                        src="https://user-images.githubusercontent.com/41667764/103757797-1aff7400-4fc6-11eb-8ade-34ef299baa9b.png"
-                        alt="top-image"
-                      />
-                    </StyledAnchor>
-                  </Card>
-                </Slide>
-              </Col>
-
-              <Col span={12} className="gutter-row">
-                <Slide right>
-                  <Card>
-                    <StyledTitle level={3}>Timeline</StyledTitle>
-                    <MyTimeline />
-                  </Card>
-                </Slide>
-                <Divider />
-                <Slide right>
-                  <Card>
-                    <StyledTitle level={3}>Showcase</StyledTitle>
-                    <Article content={articleData.guidelyte} />
-                  </Card>
-                </Slide>
-                <Divider />
-                <Slide right>
-                  <Card>
-                    <StyledTitle level={3}>1st Place @Sachacks2018</StyledTitle>
-                    <Article content={articleData.defhacks} />
-                  </Card>
-                </Slide>
-                <Divider />
-                <Slide right>
-                  <Card>
-                    <StyledTitle level={3}>1st Place @DefHacks2019</StyledTitle>
-                    <Article content={articleData.sachacks} vertical />
-                  </Card>
-                </Slide>
-              </Col>
+              {isTabletOrMobile ? (
+                <>
+                  <Col span={24} className="gutter-row">
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Hello</StyledTitle>
+                        <Biography />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide right>
+                      <Card>
+                        <StyledTitle level={3}>Timeline</StyledTitle>
+                        <MyTimeline />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide right>
+                      <Card>
+                        <StyledTitle level={3}>Showcase</StyledTitle>
+                        <Article content={articleData.guidelyte} />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide right>
+                      <Card>
+                        <StyledTitle level={3}>
+                          1st Place @Sachacks2018
+                        </StyledTitle>
+                        <Article content={articleData.defhacks} />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide right>
+                      <Card>
+                        <StyledTitle level={3}>
+                          1st Place @DefHacks2019
+                        </StyledTitle>
+                        <Article content={articleData.sachacks} vertical />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Speak With Me</StyledTitle>
+                        <Calendly />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Food App</StyledTitle>
+                        <Article content={articleData.munchwheel} />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Chat App</StyledTitle>
+                        <Article content={articleData.blast} />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Favorite Quotes</StyledTitle>
+                        <QuoteList />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Reading List</StyledTitle>
+                        <StyledParagraph>
+                          See what I&apos;ve been reading.
+                        </StyledParagraph>
+                        <StyledAnchor href="https://www.notion.so/Reading-List-116054e18e4f423a9ed35d378cc58e09">
+                          <StyledImg
+                            src="https://user-images.githubusercontent.com/41667764/103757797-1aff7400-4fc6-11eb-8ade-34ef299baa9b.png"
+                            alt="top-image"
+                          />
+                        </StyledAnchor>
+                      </Card>
+                    </Slide>
+                  </Col>
+                </>
+              ) : (
+                <>
+                  {' '}
+                  <Col span={12} className="gutter-row">
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Hello</StyledTitle>
+                        <Biography />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Speak With Me</StyledTitle>
+                        <Calendly />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Favorite Quotes</StyledTitle>
+                        <QuoteList />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Food App</StyledTitle>
+                        <Article content={articleData.munchwheel} />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Chat App</StyledTitle>
+                        <Article content={articleData.blast} />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide left>
+                      <Card>
+                        <StyledTitle level={3}>Reading List</StyledTitle>
+                        <StyledParagraph>
+                          See what I&apos;ve been reading.
+                        </StyledParagraph>
+                        <StyledAnchor href="https://www.notion.so/Reading-List-116054e18e4f423a9ed35d378cc58e09">
+                          <StyledImg
+                            src="https://user-images.githubusercontent.com/41667764/103757797-1aff7400-4fc6-11eb-8ade-34ef299baa9b.png"
+                            alt="top-image"
+                          />
+                        </StyledAnchor>
+                      </Card>
+                    </Slide>
+                  </Col>
+                  <Col span={12} className="gutter-row">
+                    <Slide right>
+                      <Card>
+                        <StyledTitle level={3}>Timeline</StyledTitle>
+                        <MyTimeline />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide right>
+                      <Card>
+                        <StyledTitle level={3}>Showcase</StyledTitle>
+                        <Article content={articleData.guidelyte} />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide right>
+                      <Card>
+                        <StyledTitle level={3}>
+                          1st Place @Sachacks2018
+                        </StyledTitle>
+                        <Article content={articleData.defhacks} />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide right>
+                      <Card>
+                        <StyledTitle level={3}>
+                          1st Place @DefHacks2019
+                        </StyledTitle>
+                        <Article content={articleData.sachacks} vertical />
+                      </Card>
+                    </Slide>
+                  </Col>
+                </>
+              )}
             </Row>
           </Fade>
         </Content>

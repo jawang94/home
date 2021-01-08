@@ -653,6 +653,7 @@
 
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 .screen {
@@ -915,6 +916,10 @@ p,
   font-weight: 500;
   line-height: 1.5;
   color: var(--color-text-primary);
+
+  @media only screen and (max-width: 1323px) {
+    display: block;
+  }
 }
 .ant-page-header-heading-sub-title {
   font-size: 16px;
@@ -943,6 +948,7 @@ p,
 
   @media only screen and (max-width: 768px) {
     text-align: center;
+    padding-top: 50px;
   }
 }
 .ant-page-header-heading {
@@ -952,9 +958,17 @@ p,
     display: block;
   }
 }
+
 .ant-page-header-heading-left {
   @media only screen and (max-width: 1323px) {
     margin-bottom: 30px;
+    display: block;
+  }
+}
+.ant-avatar {
+  @media only screen and (max-width: 1323px) {
+    height: 50px;
+    width: 50px;
   }
 }
 .ant-page-header-heading-extra {
