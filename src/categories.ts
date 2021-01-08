@@ -1,9 +1,9 @@
 const categories: any = [
+  'announcements',
   'techmentorship',
   'programming',
   'productivity',
   'reading',
-  'fashion',
   'random',
 ];
 
