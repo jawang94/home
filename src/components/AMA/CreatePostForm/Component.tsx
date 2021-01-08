@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { Field } from 'redux-form';
 import categories from '../../../categories';
@@ -28,10 +29,23 @@ class CreatePostForm extends React.Component<any, any, any> {
   mapCategories = () =>
     categories.map(
       (category: any, index: string | number | null | undefined) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <option key={index} value={category}>
-          {category}
-        </option>
+        <>
+          {category === 'announcements' ? (
+            <>
+              {this.props.user?.admin ? (
+                <>
+                  <option key={index} value={category}>
+                    {category}
+                  </option>
+                </>
+              ) : null}
+            </>
+          ) : (
+            <option key={index} value={category}>
+              {category}
+            </option>
+          )}
+        </>
       )
     );
 
