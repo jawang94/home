@@ -1,6 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Route, Switch } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
 import theme from '../../../theme';
 import GlobalStyle from '../../../globalStyle';
 import HeaderContainer from '../Header/Container';
@@ -10,20 +11,29 @@ import SignupFormContainer from '../SignupForm/Container';
 import CreatePostFormContainer from '../CreatePostForm/Container';
 import Home from '../Home';
 
-const App = ({ dark }: any) => (
-  <ThemeProvider theme={theme(dark)}>
-    <div style={{ maxWidth: '990px' }}>
-      <GlobalStyle />
-      <Route component={HeaderContainer} />
-      <Route component={ErrorNotificationContainer} />
-      <Switch>
-        <Route path="/ama/login" component={LoginFormContainer} />
-        <Route path="/ama/signup" component={SignupFormContainer} />
-        <Route path="/ama/createpost" component={CreatePostFormContainer} />
-        <Route path="/ama" component={Home} />
-      </Switch>
-    </div>
-  </ThemeProvider>
-);
+const App = ({ dark }: any) => {
+  const isDefinitelyMobile = useMediaQuery({ query: '(max-width: 736px)' });
+
+  return (
+    <ThemeProvider theme={theme(dark)}>
+      <div
+        style={{
+          maxWidth: '990px',
+          width: isDefinitelyMobile ? 'auto' : '990px',
+        }}
+      >
+        <GlobalStyle />
+        <Route component={HeaderContainer} />
+        <Route component={ErrorNotificationContainer} />
+        <Switch>
+          <Route path="/ama/login" component={LoginFormContainer} />
+          <Route path="/ama/signup" component={SignupFormContainer} />
+          <Route path="/ama/createpost" component={CreatePostFormContainer} />
+          <Route path="/ama" component={Home} />
+        </Switch>
+      </div>
+    </ThemeProvider>
+  );
+};
 
 export default App;
