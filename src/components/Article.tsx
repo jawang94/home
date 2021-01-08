@@ -43,11 +43,18 @@ const StyledSubHeadingDiv = styled.div`
 
 const StyledBodyDiv = styled.div`
   display: flex !important;
+
+  @media only screen and (max-width: 1323px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const StyledBodyLeftDiv = styled.div`
-  margin-left: 8px !important;
-  margin-right: 24px !important;
+  @media only screen and (min-width: 1323px) {
+    margin-left: 8px !important;
+    margin-right: 24px !important;
+  }
 `;
 
 const StyledBodyLeftAnchor = styled.a`

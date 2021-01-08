@@ -12,14 +12,15 @@ import CreatePostFormContainer from '../CreatePostForm/Container';
 import Home from '../Home';
 
 const App = ({ dark }: any) => {
-  const isDefinitelyMobile = useMediaQuery({ query: '(max-width: 736px)' });
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
 
   return (
     <ThemeProvider theme={theme(dark)}>
       <div
         style={{
           maxWidth: '990px',
-          width: isDefinitelyMobile ? 'auto' : '990px',
+          width: isTabletOrMobile ? 'auto' : '990px',
+          minHeight: '50vh',
         }}
       >
         <GlobalStyle />
