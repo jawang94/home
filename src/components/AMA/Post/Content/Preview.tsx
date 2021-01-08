@@ -11,8 +11,9 @@ const PostContentPreview = styled.div`
   color: ${(props) => props.theme.mutedText};
 
   @media only screen and (max-width: 768px) {
-    max-width: 200px;
+    max-width: 300px;
     text-align: left;
+    word-break: break-word;
   }
 `;
 

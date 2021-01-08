@@ -9,6 +9,12 @@ const Wrapper = styled.div`
   border-right: none;
   padding: 8px;
   background-color: ${(props) => props.theme.inputBackground};
+
+  @media only screen and (max-width: 768px) {
+    max-width: 100%;
+    text-align: left;
+    word-break: break-word;
+  }
 `;
 
 const PostContentFullText = (props: { children: any }) => (

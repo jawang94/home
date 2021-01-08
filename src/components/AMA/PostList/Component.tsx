@@ -10,6 +10,7 @@ const List = styled.ul`
   border-radius: 2px;
 
   @media (max-width: 768px) {
+    max-width: 100vw;
     border-top: none;
     border-left: none;
     border-right: none;
