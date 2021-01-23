@@ -22,8 +22,8 @@ export default function Biography() {
         serial entrepreneur.
       </StyledParagraph>
       <StyledParagraph>
-        I love creating social products that focus on bring people together and
-        make people better.
+        I love creating social products that focus on bringing people together
+        and making people&apos;s lives better.
       </StyledParagraph>
       <StyledParagraph>
         In the last two years, I&apos;ve worked as a software engineer for two

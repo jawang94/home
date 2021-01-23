@@ -71,7 +71,7 @@ const NavMenu: FC = () => {
           Ask Me Anything
         </span>
       </StyledMenuItem>
-      <StyledMenuItem
+      {/* <StyledMenuItem
         disabled
         key="projects"
         icon={<TrophyOutlined style={{ fontSize: '16px' }} />}
@@ -86,7 +86,7 @@ const NavMenu: FC = () => {
         >
           Awards And Projects
         </span>
-      </StyledMenuItem>
+      </StyledMenuItem> */}
     </Menu>
   );
 };
