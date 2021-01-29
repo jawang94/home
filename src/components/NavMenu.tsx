@@ -74,6 +74,7 @@ const NavMenu: FC = () => {
         </span>
       </StyledMenuItem>
       <StyledMenuItem
+        disabled
         key="latest"
         icon={<AppleOutlined style={{ fontSize: '16px' }} />}
       >
