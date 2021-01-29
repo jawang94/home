@@ -5,6 +5,7 @@ import {
   QuestionCircleOutlined,
   TrophyOutlined,
   HomeOutlined,
+  AppleOutlined,
 } from '@ant-design/icons';
 import styled from 'styled-components';
 
@@ -26,6 +27,7 @@ const NavMenu: FC = () => {
     aboutme: '/',
     ama: '/ama',
     projects: 'projects',
+    latest: 'latest',
   };
 
   const handleClick = (e: any) => {
@@ -71,7 +73,22 @@ const NavMenu: FC = () => {
           Ask Me Anything
         </span>
       </StyledMenuItem>
-      {/* <StyledMenuItem
+      <StyledMenuItem
+        key="latest"
+        icon={<AppleOutlined style={{ fontSize: '16px' }} />}
+      >
+        <span
+          style={{
+            border: '2px solid transparent',
+            borderBottomColor: `${
+              current === 'latest' ? 'orange' : 'transparent'
+            }`,
+          }}
+        >
+          Latest
+        </span>
+      </StyledMenuItem>
+      <StyledMenuItem
         disabled
         key="projects"
         icon={<TrophyOutlined style={{ fontSize: '16px' }} />}
@@ -86,7 +103,7 @@ const NavMenu: FC = () => {
         >
           Awards And Projects
         </span>
-      </StyledMenuItem> */}
+      </StyledMenuItem>
     </Menu>
   );
 };

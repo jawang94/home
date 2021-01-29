@@ -12,6 +12,7 @@ import CardList from './CardList';
 import NavMenu from './NavMenu';
 import ProfileSummary from './ProfileSummary';
 import withSplashScreen from './withSplashScreen';
+import Latest from './Latest';
 
 const { Header, Content, Footer } = Layout;
 
@@ -33,6 +34,11 @@ const App: FC = () => (
               <Route path="/projects">
                 <div className="container">
                   <CardList />
+                </div>
+              </Route>
+              <Route path="/latest">
+                <div className="container">
+                  <Latest />
                 </div>
               </Route>
               <Route exact path="/">
