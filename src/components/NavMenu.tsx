@@ -27,7 +27,7 @@ const NavMenu: FC = () => {
     aboutme: '/',
     ama: '/ama',
     projects: 'projects',
-    latest: 'latest',
+    topicspace: 'topicspace',
   };
 
   const handleClick = (e: any) => {
@@ -75,18 +75,18 @@ const NavMenu: FC = () => {
       </StyledMenuItem>
       <StyledMenuItem
         disabled
-        key="latest"
+        key="topicspace"
         icon={<AppleOutlined style={{ fontSize: '16px' }} />}
       >
         <span
           style={{
             border: '2px solid transparent',
             borderBottomColor: `${
-              current === 'latest' ? 'orange' : 'transparent'
+              current === 'topicspace' ? 'orange' : 'transparent'
             }`,
           }}
         >
-          Latest
+          TopicSpace
         </span>
       </StyledMenuItem>
       <StyledMenuItem
