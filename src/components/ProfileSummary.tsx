@@ -320,7 +320,7 @@ const ProfileSummary: FC = () => {
                     <Slide right>
                       <Card>
                         <StyledTitle level={3}>
-                          1st Place @Sachacks2018
+                          1st Place @DefHacks2019
                         </StyledTitle>
                         <Article content={articleData.defhacks} />
                       </Card>
@@ -329,7 +329,7 @@ const ProfileSummary: FC = () => {
                     <Slide right>
                       <Card>
                         <StyledTitle level={3}>
-                          1st Place @DefHacks2019
+                          1st Place @Sachacks2018
                         </StyledTitle>
                         <Article content={articleData.sachacks} vertical />
                       </Card>
