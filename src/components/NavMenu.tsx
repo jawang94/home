@@ -31,8 +31,12 @@ const NavMenu: FC = () => {
   };
 
   const handleClick = (e: any) => {
-    updateState({ ...state, current: e.key });
-    history.push(ROUTER_MAP[e.key]);
+    if (e.key === 'topicspace') {
+      window.location.href = 'https://www.topicspace.app';
+    } else {
+      updateState({ ...state, current: e.key });
+      history.push(ROUTER_MAP[e.key]);
+    }
   };
 
   return (
@@ -74,7 +78,6 @@ const NavMenu: FC = () => {
         </span>
       </StyledMenuItem>
       <StyledMenuItem
-        disabled
         key="topicspace"
         icon={<AppleOutlined style={{ fontSize: '16px' }} />}
       >
