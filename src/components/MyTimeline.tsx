@@ -195,6 +195,20 @@ export default function MyTimeline() {
             </StyledPanel>
           </Collapse>
         </StyledMenuItem>
+        <StyledMenuItem color="blue">
+          <Collapse ghost>
+            <StyledPanel
+              header={
+                <>
+                  <Text strong>Launched TopicSpace</Text> | 02.2021
+                </>
+              }
+              key="1"
+            >
+              {topicspaceExperience}
+            </StyledPanel>
+          </Collapse>
+        </StyledMenuItem>
       </Timeline>
     </>
   );
