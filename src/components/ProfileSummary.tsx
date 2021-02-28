@@ -305,7 +305,14 @@ const ProfileSummary: FC = () => {
                     <Divider />
                     <Slide right>
                       <Card>
-                        <StyledTitle level={3}>Showcase</StyledTitle>
+                        <StyledTitle level={3}>TopicSpace</StyledTitle>
+                        <Article content={articleData.topicspace} />
+                      </Card>
+                    </Slide>
+                    <Divider />
+                    <Slide right>
+                      <Card>
+                        <StyledTitle level={3}>Guidelyte</StyledTitle>
                         <Article content={articleData.guidelyte} />
                       </Card>
                     </Slide>

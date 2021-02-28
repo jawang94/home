@@ -18,12 +18,12 @@ export default function Biography() {
   return (
     <>
       <StyledParagraph>
-        I&apos;m Jason. I&apos;m a self-taught software engineer, inventor, and
-        serial entrepreneur.
+        I&apos;m Jason. I&apos;m a self-taught software engineer and serial
+        entrepreneur.
       </StyledParagraph>
       <StyledParagraph>
         I love creating social products that focus on bringing people together
-        and making people&apos;s lives better.
+        and making the world&apos;s resources more accessible to everyone.
       </StyledParagraph>
       <StyledParagraph>
         In the last two years, I&apos;ve worked as a software engineer for two

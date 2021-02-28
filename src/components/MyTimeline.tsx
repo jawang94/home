@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import elevat from '../img/elevat.png';
 import guidelyte from '../img/guidelyte.png';
 import xemelgo from '../img/xemelgo.png';
+import topicspace from '../img/topicspace.png';
 
 const { Panel } = Collapse;
 const { Paragraph, Text, Title } = Typography;
@@ -31,16 +32,45 @@ const StyledPanel = styled(Panel)`
   font-size: 1rem;
 `;
 
+export const topicspaceExperience = (
+  <>
+    <Content
+      extraContent={<img src={topicspace} alt="content" width="125px" />}
+    >
+      <Paragraph style={{ paddingRight: '1rem' }}>
+        <StyledTitle level={4}>Co-founder &amp; Primary Engineer</StyledTitle>
+        <ul>
+          <li>
+            Launched in 2021, TopicSpace is a community of experts and learners
+            co-creating content around everything they’re passionate about.
+          </li>
+          <li>
+            This is more than just learning; this is social knowledge sharing —
+            high quality, multi-media, and diverse content sourced from the
+            experiences of many. TopicSpace brings the joy of social media to
+            the world of education.
+          </li>
+          <li>
+            As the sole engineer my primary responsibility is building and
+            scaling the platform. But, I do a bit of everything.
+          </li>
+        </ul>
+      </Paragraph>
+    </Content>
+  </>
+);
+
 export const guidelyteExperience = (
   <>
     <Content extraContent={<img src={guidelyte} alt="content" width="125px" />}>
       <Paragraph style={{ paddingRight: '1rem' }}>
-        <StyledTitle level={4}>Founder, CEO, &amp; Chief Engineer</StyledTitle>
+        <StyledTitle level={4}>
+          Co-founder, CEO, &amp; Primary Engineer
+        </StyledTitle>
         <ul>
           <li>
-            Founder, CEO, and Chief Engineer of Guidelyte, a startup whose
-            mission is to create a world where chasing your dreams is exciting,
-            not terrifying.
+            Guidelyte is a startup whose mission is to create a world where
+            chasing your dreams is exciting, not terrifying.
           </li>
           <li>
             Our vision is to aggregate the world&apos;s professional data in a

@@ -9,6 +9,19 @@ export interface ArticleDataShape {
 }
 
 const articleData = {
+  topicspace: {
+    topImage:
+      'https://user-images.githubusercontent.com/41667764/109412512-3e5af580-795d-11eb-9d83-07d5676525bb.png',
+    topSubHeading:
+      'A global community of experts and learners who come together each day to democratize knowledge.',
+    leftAnchor: 'https://www.topicspace.app',
+    leftImage:
+      'https://user-images.githubusercontent.com/41667764/109412445-df957c00-795c-11eb-9c8f-3e88d5e17d6f.png',
+    rightAnchor: 'https://www.topicspace.app',
+    rightHeaderText: 'TopicSpace',
+    rightBodyText:
+      'Launched in 2021, TopicSpace is a community of experts and learners co-creating content around everything they’re passionate about. \n This is more than just learning; this is social knowledge sharing — high quality, multi-media, and diverse content sourced from the experiences of many. TopicSpace brings the joy of social media to the world of education.',
+  },
   guidelyte: {
     topImage:
       'https://user-images.githubusercontent.com/41667764/103190801-5e9c0480-4887-11eb-8e99-33b41df2aa77.png',
