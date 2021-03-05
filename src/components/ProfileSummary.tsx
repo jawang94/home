@@ -289,16 +289,10 @@ const ProfileSummary: FC = () => {
                     <Divider />
                     <Slide left>
                       <Card>
-                        <StyledTitle level={3}>Reading List</StyledTitle>
-                        <StyledParagraph>
-                          See what I&apos;ve been reading.
-                        </StyledParagraph>
-                        <StyledAnchor href="https://www.notion.so/Reading-List-116054e18e4f423a9ed35d378cc58e09">
-                          <StyledImg
-                            src="https://user-images.githubusercontent.com/41667764/103757797-1aff7400-4fc6-11eb-8ade-34ef299baa9b.png"
-                            alt="top-image"
-                          />
-                        </StyledAnchor>
+                        <StyledTitle level={3}>
+                          1st Place @Sachacks2018
+                        </StyledTitle>
+                        <Article content={articleData.sachacks} vertical />
                       </Card>
                     </Slide>
                   </Col>
@@ -335,10 +329,16 @@ const ProfileSummary: FC = () => {
                     <Divider />
                     <Slide right>
                       <Card>
-                        <StyledTitle level={3}>
-                          1st Place @Sachacks2018
-                        </StyledTitle>
-                        <Article content={articleData.sachacks} vertical />
+                        <StyledTitle level={3}>Reading List</StyledTitle>
+                        <StyledParagraph>
+                          See what I&apos;ve been reading.
+                        </StyledParagraph>
+                        <StyledAnchor href="https://www.notion.so/Reading-List-116054e18e4f423a9ed35d378cc58e09">
+                          <StyledImg
+                            src="https://user-images.githubusercontent.com/41667764/103757797-1aff7400-4fc6-11eb-8ade-34ef299baa9b.png"
+                            alt="top-image"
+                          />
+                        </StyledAnchor>
                       </Card>
                     </Slide>
                   </Col>
