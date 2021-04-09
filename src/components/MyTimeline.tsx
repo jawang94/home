@@ -45,14 +45,17 @@ export const topicspaceExperience = (
             co-creating content around everything they’re passionate about.
           </li>
           <li>
-            This is more than just learning; this is social knowledge sharing —
-            high quality, multi-media, and diverse content sourced from the
-            experiences of many. TopicSpace brings the joy of social media to
-            the world of education.
+            This is more than just social media; this is social knowledge
+            sharing — high quality, multi-media, and diverse content sourced
+            from the experiences of many. TopicSpace lets creators seamlessly
+            integrate their communities into their lives. Market yourself, grow
+            your audience, and engage with fans in less time and with better
+            results.
           </li>
           <li>
             As the sole engineer my primary responsibility is building and
-            scaling the platform. But, I do a bit of everything.
+            scaling the app. But, I do a bit of everything and thoroughly enjoy
+            the other aspects of launching a product from zero.
           </li>
         </ul>
       </Paragraph>

@@ -20,7 +20,7 @@ const articleData = {
     rightAnchor: 'https://www.topicspace.app',
     rightHeaderText: 'TopicSpace',
     rightBodyText:
-      'Launched in 2021, TopicSpace is a community of experts and learners co-creating content around everything they’re passionate about. \n This is more than just learning; this is social knowledge sharing — high quality, multi-media, and diverse content sourced from the experiences of many. TopicSpace brings the joy of social media to the world of education.',
+      'Launched in 2021, TopicSpace is a community of experts and learners co-creating content around everything they’re passionate about. \n This is more than just social media; this is social knowledge sharing — high quality, multi-media, and diverse content sourced from the experiences of many. TopicSpace lets creators seamlessly integrate their communities into their lives. Market yourself, grow your audience, and engage with fans in less time and with better results.',
   },
   guidelyte: {
     topImage:
