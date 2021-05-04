@@ -5,7 +5,7 @@ import {
   Divider,
   PageHeader,
   Row,
-  Tag,
+  // Tag,
   Typography,
 } from 'antd';
 import React, { FC } from 'react';
@@ -137,12 +137,12 @@ const ProfileSummary: FC = () => {
     <PageHeader
       title="Jason Wang"
       className="site-page-header"
-      subTitle={isDefinitelyMobile ? null : 'Seattle, WA'}
-      tags={
-        <Tag style={{ fontSize: '14px', lineHeight: '20px' }} color="green">
-          Open To Opportunities
-        </Tag>
-      }
+      subTitle={isDefinitelyMobile ? null : '📍 Greater Seattle Area'}
+      // tags={
+      //   <Tag style={{ fontSize: '14px', lineHeight: '20px' }} color="green">
+      //     Open To Opportunities
+      //   </Tag>
+      // }
       extra={extraButtons}
       avatar={{
         shape: 'circle',
@@ -161,7 +161,12 @@ const ProfileSummary: FC = () => {
                   <Col span={24} className="gutter-row">
                     <Slide left>
                       <Card>
-                        <StyledTitle level={3}>Hello</StyledTitle>
+                        <StyledTitle level={3}>
+                          Nutshell{' '}
+                          <span role="img" aria-label="waveemoji">
+                            🥜
+                          </span>
+                        </StyledTitle>
                         <Biography />
                       </Card>
                     </Slide>
@@ -214,14 +219,14 @@ const ProfileSummary: FC = () => {
                     <Divider />
                     <Slide left>
                       <Card>
-                        <StyledTitle level={3}>Food App</StyledTitle>
+                        <StyledTitle level={3}>MunchWheel</StyledTitle>
                         <Article content={articleData.munchwheel} />
                       </Card>
                     </Slide>
                     <Divider />
                     <Slide left>
                       <Card>
-                        <StyledTitle level={3}>Chat App</StyledTitle>
+                        <StyledTitle level={3}>Blast</StyledTitle>
                         <Article content={articleData.blast} />
                       </Card>
                     </Slide>
@@ -254,7 +259,12 @@ const ProfileSummary: FC = () => {
                   <Col span={12} className="gutter-row">
                     <Slide left>
                       <Card>
-                        <StyledTitle level={3}>Hello</StyledTitle>
+                        <StyledTitle level={3}>
+                          Nutshell{' '}
+                          <span role="img" aria-label="waveemoji">
+                            🥜
+                          </span>
+                        </StyledTitle>
                         <Biography />
                       </Card>
                     </Slide>
@@ -275,14 +285,14 @@ const ProfileSummary: FC = () => {
                     <Divider />
                     <Slide left>
                       <Card>
-                        <StyledTitle level={3}>Food App</StyledTitle>
+                        <StyledTitle level={3}>MunchWheel</StyledTitle>
                         <Article content={articleData.munchwheel} />
                       </Card>
                     </Slide>
                     <Divider />
                     <Slide left>
                       <Card>
-                        <StyledTitle level={3}>Chat App</StyledTitle>
+                        <StyledTitle level={3}>Blast</StyledTitle>
                         <Article content={articleData.blast} />
                       </Card>
                     </Slide>

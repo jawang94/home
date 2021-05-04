@@ -6,6 +6,7 @@ import elevat from '../img/elevat.png';
 import guidelyte from '../img/guidelyte.png';
 import xemelgo from '../img/xemelgo.png';
 import topicspace from '../img/topicspace.png';
+import makersplace from '../img/makersplace.png';
 
 const { Panel } = Collapse;
 const { Paragraph, Text, Title } = Typography;
@@ -32,13 +33,31 @@ const StyledPanel = styled(Panel)`
   font-size: 1rem;
 `;
 
+export const makersplaceExperience = (
+  <>
+    <Content
+      extraContent={<img src={makersplace} alt="content" width="125px" />}
+    >
+      <Paragraph style={{ paddingRight: '1rem' }}>
+        <StyledTitle level={4}>Full-Stack Software Engineer</StyledTitle>
+        <ul>
+          <li>
+            Enabling a vibrant and sustainable future for digital creativity,
+            starting by empowering the world&apos;s digital creators.
+          </li>
+        </ul>
+      </Paragraph>
+    </Content>
+  </>
+);
+
 export const topicspaceExperience = (
   <>
     <Content
       extraContent={<img src={topicspace} alt="content" width="125px" />}
     >
       <Paragraph style={{ paddingRight: '1rem' }}>
-        <StyledTitle level={4}>Co-founder &amp; Primary Engineer</StyledTitle>
+        <StyledTitle level={4}>Co-founder &amp; Lead Engineer</StyledTitle>
         <ul>
           <li>
             Launched in 2021, TopicSpace is a community of experts and learners
@@ -67,9 +86,7 @@ export const guidelyteExperience = (
   <>
     <Content extraContent={<img src={guidelyte} alt="content" width="125px" />}>
       <Paragraph style={{ paddingRight: '1rem' }}>
-        <StyledTitle level={4}>
-          Co-founder, CEO, &amp; Primary Engineer
-        </StyledTitle>
+        <StyledTitle level={4}>Co-founder &amp; Lead Engineer</StyledTitle>
         <ul>
           <li>
             Guidelyte is a startup whose mission is to create a world where
@@ -184,7 +201,7 @@ export default function MyTimeline() {
             </StyledPanel>
           </Collapse>
         </StyledMenuItem>
-        <StyledMenuItem color="blue">
+        <StyledMenuItem color="green">
           <Collapse ghost>
             <StyledPanel
               header={
@@ -209,6 +226,20 @@ export default function MyTimeline() {
               key="1"
             >
               {topicspaceExperience}
+            </StyledPanel>
+          </Collapse>
+        </StyledMenuItem>
+        <StyledMenuItem color="blue">
+          <Collapse ghost>
+            <StyledPanel
+              header={
+                <>
+                  <Text strong>Joined MakersPlace</Text> | 05.2021
+                </>
+              }
+              key="1"
+            >
+              {makersplaceExperience}
             </StyledPanel>
           </Collapse>
         </StyledMenuItem>

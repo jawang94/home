@@ -25,7 +25,7 @@ export default function QuoteList() {
         </li>
         <li>
           <StyledText copyable>
-            If a design is taking too long, the design is probably wrong.
+            If a schedule is taking too long, the design is probably wrong.
           </StyledText>
         </li>
         <li>
@@ -36,6 +36,24 @@ export default function QuoteList() {
         <li>
           <StyledText copyable>
             The goal of iterating is to get less wrong over time.
+          </StyledText>
+        </li>
+        <li>
+          <StyledText copyable>
+            Make every detail perfect and limit the number of details to
+            perfect.
+          </StyledText>
+        </li>
+        <li>
+          <StyledText copyable>
+            It’s about finding your values, and committing to them. It’s about
+            finding your North Star. It’s about making choices. Some are easy.
+            Some are hard. And some will make you question everything.
+          </StyledText>
+        </li>
+        <li>
+          <StyledText copyable>
+            A seven inch dongle is enough for anybody.
           </StyledText>
         </li>
       </ul>
