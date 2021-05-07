@@ -38,8 +38,8 @@ export default function Biography() {
         <StyledText style={{ fontWeight: 'bold' }}>I love...</StyledText>
         <br />
         <StyledText>
-          Creating insanely great products that enrich people&apos;s lives and
-          open new possibilities.
+          Creating great products that enrich people&apos;s lives and open new
+          possibilities.
         </StyledText>
       </Paragraph>
     </>
